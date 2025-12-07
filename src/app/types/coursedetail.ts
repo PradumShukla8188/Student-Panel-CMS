@@ -3,6 +3,7 @@ export type CourseDetailType = {
   imageSrc: string
   profession: string
   price: string
+  duration:string
   category:
     | 'mobiledevelopment'
     | 'webdevelopment'

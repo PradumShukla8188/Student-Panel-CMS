@@ -5,12 +5,14 @@ import Image from 'next/image'
 import { CourseDetailType } from '@/app/types/coursedetail'
 import CourseDetailSkeleton from '../../Skeleton/CourseDetail'
 import Link from 'next/link'
+import { useRouter ,usePathname} from 'next/navigation'
 
 interface Name {
   imageSrc: string
   course: string
   price: string
   profession: string
+  duration:string
   category:
   | 'webdevelopment'
   | 'mobiledevelopment'
@@ -20,8 +22,15 @@ interface Name {
 
 const NamesList = () => {
   // -------------------------------------------------------------
+  const router=useRouter()
+  const pathname=usePathname()
   const [courseDetail, setCourseDetail] = useState<CourseDetailType[]>([])
   const [loading, setLoading] = useState(true)
+
+  console.log("pathnme-->",pathname)
+
+  const isAllCourseRoute=pathname=="/all-courses"
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -89,7 +98,7 @@ const NamesList = () => {
             <div className='flex items-center justify-between'>
               <p className='block font-normal text-gray-900'>{name.course}</p>
               <div className='block text-lg font-semibold text-success border-solid border-2 border-success rounded-md px-1'>
-                <p>${name.price}</p>
+                <p>${name?.price}</p>
               </div>
             </div>
             <Link href={'/'}>
@@ -101,7 +110,7 @@ const NamesList = () => {
             </Link>
           </div>
           <div className='flex justify-between border-solid border-2 rounded-md p-2'>
-            <p>12 Classes</p>
+            <p>{name?.duration}</p>
             <div className='flex flex-row space-x-4'>
               <div className='flex'>
                 <Image
@@ -132,12 +141,12 @@ const NamesList = () => {
     <section id='courses-section'>
       <div className='container mx-auto max-w-7xl px-4'>
         <div className='flex flex-col sm:flex-row justify-between sm:items-center gap-5 mb-4'>
-          <h2 className='font-bold tracking-tight'>Popular Courses</h2>
-          <div>
-            <button className='bg-transparent cursor-pointer hover:bg-primary text-primary font-medium hover:text-white py-3 px-4 border border-primary hover:border-transparent rounded-sm duration-300'>
-              Explore Classes
+          <h2 className='font-bold tracking-tight'>{isAllCourseRoute?"All Course":"Popular Courses"}</h2>
+          {!isAllCourseRoute?<div>
+            <button onClick={()=>router.push("/all-courses")} className='bg-transparent cursor-pointer hover:bg-primary text-primary font-medium hover:text-white py-3 px-4 border border-primary hover:border-transparent rounded-sm duration-300'>
+              Explore All Course
             </button>
-          </div>
+          </div>:null}
         </div>
         <div className='flex nowhitespace space-x-5 rounded-xl bg-white p-1 overflow-x-auto mb-4'>
           {/* FOR DESKTOP VIEW */}
