@@ -18,7 +18,7 @@ const Banner = () => {
             </p>
             <div className='backdrop-blur-md bg-white/30 border border-white/30 rounded-lg shadow-lg p-6 w-fit mx-auto'>
               <div className='flex items-center justify-center gap-8'>
-                <div className='hidden sm:block -space-x-2 overflow-hidden'>
+                <Link href={'/about-developer'}  className='hidden sm:block -space-x-2 overflow-hidden'>
                   <Image
                     className='inline-block h-12 w-12 rounded-full ring-2 ring-white'
                     src='https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
@@ -55,7 +55,7 @@ const Banner = () => {
                     width={12}
                     height={12}
                   />
-                </div>
+                </Link>
                 <div>
                   <div className='flex justify-center sm:justify-start'>
                     <h3 className='text-2xl font-semibold mr-2'>4.6</h3>

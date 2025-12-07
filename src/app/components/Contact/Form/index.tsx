@@ -203,7 +203,7 @@ const ContactForm = () => {
                     />
                   )}
                 />
-                {errors.course && <p>{errors.course.message}</p>}
+                {errors?.course && <p className='error'>{errors?.course?.message}</p>}
               </div>
               <div className='w-full mx-0 my-2.5 flex-1'>
                 <label htmlFor='message' className='pb-3 inline-block text-base'>

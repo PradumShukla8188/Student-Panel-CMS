@@ -24,6 +24,9 @@ export const ContactFormSchema = Yup.object<contactFormValues>({
         .typeError("Only numbers are allowed.")
         .positive("A phone number can't start with a minus.")
         .integer("A phone number can't include a decimal point.")
-        .min(10,"Phone number must be of 10 digits.")
+        .min(10,"Phone number must be of 10 digits."),
+
+        course:Yup.string()
+        .required("Please select the course.")
         
 })
