@@ -1,0 +1,10 @@
+.error{
+    color:red
+}
+
+.developer-heading {
+    display: flex;
+    justify-content: center;
+    font-size: 80px;
+    font-weight: 600;
+}
