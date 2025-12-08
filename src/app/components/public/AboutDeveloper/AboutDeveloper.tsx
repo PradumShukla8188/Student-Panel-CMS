@@ -1,6 +1,6 @@
 "use client";
 
-import TestimonialSkeleton from "../Skeleton/Testimonial";
+import TestimonialSkeleton from "../../Skeleton/Testimonial";
 import { useEffect, useState } from "react";
 import { TestimonialType } from "@/app/types/testimonial";
 import Image from "next/image";
