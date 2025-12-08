@@ -17,6 +17,9 @@ const HeaderData: HeaderItem[] = [
   { label: 'Contact Us', href: '/#contact' },
   { label: 'Docs', href: '/documentation' },
   { label: 'About Developer', href: '/about-developer' },
+  { label: 'Result', href: '/result' },
+
+
 ]
 
 const CourseData: CourseType[] = [
@@ -73,7 +76,7 @@ const CourseDetailData: CourseDetailType[] = [
     profession: 'HTML, CSS, Javascript Development',
     price: '40',
     category: 'webdevelopment',
-    duration:'2 Months'
+    duration: '2 Months'
   },
   {
     course: 'Node.js',
@@ -81,7 +84,7 @@ const CourseDetailData: CourseDetailType[] = [
     profession: 'Backend with Node.js and Express.js',
     price: '21',
     category: 'webdevelopment',
-    duration:'2 Months'
+    duration: '2 Months'
   },
   {
     course: 'Database',
@@ -89,7 +92,7 @@ const CourseDetailData: CourseDetailType[] = [
     profession: 'Learn Mongodb with Mongoose',
     price: '21',
     category: 'webdevelopment',
-    duration:'1 Months'
+    duration: '1 Months'
   },
   {
     course: 'React.js',
@@ -97,7 +100,7 @@ const CourseDetailData: CourseDetailType[] = [
     profession: 'Learn React with Redux toolkit',
     price: '99',
     category: 'webdevelopment',
-    duration:'2 Months'
+    duration: '2 Months'
   },
   {
     course: 'React Native',
@@ -105,7 +108,7 @@ const CourseDetailData: CourseDetailType[] = [
     profession: 'Learn React Native with Node.js',
     price: '89',
     category: 'mobiledevelopment',
-    duration:'2 Months'
+    duration: '2 Months'
   },
   {
     course: 'Swift',
@@ -113,7 +116,7 @@ const CourseDetailData: CourseDetailType[] = [
     profession: 'Learn Swift from Scratch',
     price: '89',
     category: 'mobiledevelopment',
-    duration:'2 Months'
+    duration: '2 Months'
   },
   {
     course: 'Flutter',
@@ -121,7 +124,7 @@ const CourseDetailData: CourseDetailType[] = [
     profession: 'Flutter App Development',
     price: '69',
     category: 'mobiledevelopment',
-    duration:'2 Months'
+    duration: '2 Months'
   },
   {
     course: 'Onsen UI',
@@ -129,7 +132,7 @@ const CourseDetailData: CourseDetailType[] = [
     profession: 'Learn Onsen Ui with HTML, CSS',
     price: '69',
     category: 'mobiledevelopment',
-    duration:'2 Months'
+    duration: '2 Months'
   },
   {
     course: 'TensorFlow',
@@ -137,7 +140,7 @@ const CourseDetailData: CourseDetailType[] = [
     profession: 'Learn TensorFlow with SQL',
     price: '99',
     category: 'datascience',
-    duration:'2 Months'
+    duration: '2 Months'
   },
   {
     course: 'AWS',
@@ -145,7 +148,7 @@ const CourseDetailData: CourseDetailType[] = [
     profession: 'AWS Deep Learning AMI',
     price: '99',
     category: 'datascience',
-    duration:'2 Months'
+    duration: '2 Months'
   },
   {
     course: 'Bokeh',
@@ -153,7 +156,7 @@ const CourseDetailData: CourseDetailType[] = [
     profession: 'Learn Bokeh with Python',
     price: '99',
     category: 'datascience',
-    duration:'2 Months'
+    duration: '2 Months'
   },
   {
     course: 'Scikit',
@@ -161,7 +164,7 @@ const CourseDetailData: CourseDetailType[] = [
     profession: 'Scikit with Python Development',
     price: '89',
     category: 'datascience',
-    duration:'2 Months'
+    duration: '2 Months'
   },
   {
     course: 'Laas',
@@ -169,7 +172,7 @@ const CourseDetailData: CourseDetailType[] = [
     profession: 'Infra-as-a-Service',
     price: '21',
     category: 'cloudcomputing',
-    duration:'2 Months'
+    duration: '2 Months'
   },
   {
     course: 'Iaas',
@@ -177,7 +180,7 @@ const CourseDetailData: CourseDetailType[] = [
     profession: 'Info-as-a-Service',
     price: '29',
     category: 'cloudcomputing',
-    duration:'2 Months'
+    duration: '2 Months'
   },
   {
     course: 'Paas',
@@ -185,7 +188,7 @@ const CourseDetailData: CourseDetailType[] = [
     profession: 'Platform-as-a-Service',
     price: '99',
     category: 'cloudcomputing',
-    duration:'2 Months'
+    duration: '2 Months'
   },
   {
     course: 'Saas',
@@ -193,7 +196,7 @@ const CourseDetailData: CourseDetailType[] = [
     profession: 'Software-as-a-Service',
     price: '58',
     category: 'cloudcomputing',
-    duration:'2 Months'
+    duration: '2 Months'
   },
 ]
 

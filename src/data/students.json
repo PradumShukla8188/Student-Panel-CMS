@@ -1,0 +1,97 @@
+[
+  {
+    "rollNumber": "PTCE/2024/001",
+    "name": "Rajesh Kumar",
+    "fatherName": "Suresh Kumar",
+    "dateOfBirth": "15-05-2000",
+    "course": "Diploma in Computer Applications",
+    "duration": "6 Months",
+    "grade": "A+",
+    "percentage": "92.5",
+    "issueDate": "15-11-2024",
+    "registrationNumber": "REG2024001",
+    "subjects": [
+      { "name": "Computer Fundamentals", "theory": 45, "practical": 48, "total": 93, "grade": "A+" },
+      { "name": "MS Office", "theory": 44, "practical": 47, "total": 91, "grade": "A+" },
+      { "name": "Internet & Email", "theory": 46, "practical": 49, "total": 95, "grade": "A+" },
+      { "name": "Tally Prime", "theory": 43, "practical": 46, "total": 89, "grade": "A" },
+      { "name": "Programming in C", "theory": 47, "practical": 48, "total": 95, "grade": "A+" }
+    ]
+  },
+  {
+    "rollNumber": "PTCE/2024/002",
+    "name": "Priya Sharma",
+    "fatherName": "Ramesh Sharma",
+    "dateOfBirth": "22-08-1999",
+    "course": "Advanced Diploma in IT",
+    "duration": "1 Year",
+    "grade": "A",
+    "percentage": "88.0",
+    "issueDate": "15-11-2024",
+    "registrationNumber": "REG2024002",
+    "subjects": [
+      { "name": "Computer Fundamentals", "theory": 42, "practical": 45, "total": 87, "grade": "A" },
+      { "name": "MS Office", "theory": 43, "practical": 46, "total": 89, "grade": "A" },
+      { "name": "Internet & Email", "theory": 44, "practical": 45, "total": 89, "grade": "A" },
+      { "name": "Tally Prime", "theory": 41, "practical": 44, "total": 85, "grade": "A" },
+      { "name": "Programming in C", "theory": 43, "practical": 47, "total": 90, "grade": "A+" }
+    ]
+  },
+  {
+    "rollNumber": "PTCE/2024/003",
+    "name": "Amit Patel",
+    "fatherName": "Vijay Patel",
+    "dateOfBirth": "10-03-2001",
+    "course": "Certificate in Computer Programming",
+    "duration": "3 Months",
+    "grade": "B+",
+    "percentage": "78.5",
+    "issueDate": "15-11-2024",
+    "registrationNumber": "REG2024003",
+    "subjects": [
+      { "name": "Computer Fundamentals", "theory": 38, "practical": 40, "total": 78, "grade": "B+" },
+      { "name": "MS Office", "theory": 37, "practical": 41, "total": 78, "grade": "B+" },
+      { "name": "Internet & Email", "theory": 39, "practical": 40, "total": 79, "grade": "B+" },
+      { "name": "Tally Prime", "theory": 36, "practical": 39, "total": 75, "grade": "B" },
+      { "name": "Programming in C", "theory": 40, "practical": 43, "total": 83, "grade": "A" }
+    ]
+  },
+  {
+    "rollNumber": "PTCE/2024/004",
+    "name": "Sneha Gupta",
+    "fatherName": "Anil Gupta",
+    "dateOfBirth": "18-07-2002",
+    "course": "Diploma in Computer Applications",
+    "duration": "6 Months",
+    "grade": "A+",
+    "percentage": "95.0",
+    "issueDate": "15-11-2024",
+    "registrationNumber": "REG2024004",
+    "subjects": [
+      { "name": "Computer Fundamentals", "theory": 47, "practical": 49, "total": 96, "grade": "A+" },
+      { "name": "MS Office", "theory": 46, "practical": 48, "total": 94, "grade": "A+" },
+      { "name": "Internet & Email", "theory": 48, "practical": 49, "total": 97, "grade": "A+" },
+      { "name": "Tally Prime", "theory": 45, "practical": 48, "total": 93, "grade": "A+" },
+      { "name": "Programming in C", "theory": 47, "practical": 48, "total": 95, "grade": "A+" }
+    ]
+  },
+  {
+    "rollNumber": "PTCE/2024/005",
+    "name": "Vikram Singh",
+    "fatherName": "Harendra Singh",
+    "dateOfBirth": "25-12-2000",
+    "course": "Advanced Diploma in IT",
+    "duration": "1 Year",
+    "grade": "A",
+    "percentage": "85.5",
+    "issueDate": "15-11-2024",
+    "registrationNumber": "REG2024005",
+    "subjects": [
+      { "name": "Computer Fundamentals", "theory": 41, "practical": 44, "total": 85, "grade": "A" },
+      { "name": "MS Office", "theory": 42, "practical": 43, "total": 85, "grade": "A" },
+      { "name": "Internet & Email", "theory": 43, "practical": 44, "total": 87, "grade": "A" },
+      { "name": "Tally Prime", "theory": 40, "practical": 43, "total": 83, "grade": "A" },
+      { "name": "Programming in C", "theory": 44, "practical": 46, "total": 90, "grade": "A+" }
+    ]
+  }
+]
