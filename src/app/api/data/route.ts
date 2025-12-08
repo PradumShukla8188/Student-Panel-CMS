@@ -37,35 +37,35 @@ const HourData: Hourtype[] = [
 ]
 
 const Companiesdata: { imgSrc: string }[] = [
-  // {
-  //   imgSrc: '/images/slickCompany/airbnb.svg',
-  // },
-  // {
-  //   imgSrc: '/images/slickCompany/hubspot.svg',
-  // },
-  // {
-  //   imgSrc: '/images/slickCompany/microsoft.svg',
-  // },
-  // {
-  //   imgSrc: '/images/slickCompany/google.svg',
-  // },
-  // {
-  //   imgSrc: '/images/slickCompany/walmart.svg',
-  // },
-  // {
-  //   imgSrc: '/images/slickCompany/fedex.svg',
-  // },
   {
-    imgSrc: '/images/slickCompany/SSTCI.jpg',
+    imgSrc: '/images/slickCompany/HTML.PNG',
   },
   {
-    imgSrc: '/images/slickCompany/SSTCI2.jpg',
+    imgSrc: '/images/slickCompany/Css.PNG',
   },
   {
-    imgSrc: '/images/slickCompany/SSTCI3.jpg',
+    imgSrc: '/images/slickCompany/Javascript.PNG',
   },
   {
-    imgSrc: '/images/slickCompany/SSTCI4.jpg',
+    imgSrc: '/images/slickCompany/React.PNG',
+  },
+  {
+    imgSrc: '/images/slickCompany/Node.PNG',
+  },
+  {
+    imgSrc: '/images/slickCompany/Next.JPEG',
+  },
+  {
+    imgSrc: '/images/slickCompany/Express.JPEG',
+  },
+  {
+    imgSrc: '/images/slickCompany/Nestjs.JPEG',
+  },
+  {
+    imgSrc: '/images/slickCompany/Php.PNG',
+  },
+  {
+    imgSrc: '/images/slickCompany/Laravel.PNG',
   },
 ]
 
