@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { Icon } from '@iconify/react/dist/iconify.js'
 import { useEffect, useState } from 'react'
 import { FooterLinkType } from '@/app/types/footerlinks'
+import Logo from '../Header/Logo'
 
 const Footer = () => {
   const [footerlink, SetFooterlink] = useState<FooterLinkType[]>([])
@@ -29,12 +30,13 @@ const Footer = () => {
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-16 xl:gap-8'>
           <div className='col-span-4 flex flex-col gap-5'>
             <div>
-              <Image
+              <Logo />
+              {/* <Image
                 src='/images/logo/logo2.svg'
                 alt='Logo'
                 width={48}
                 height={64}
-              />
+              /> */}
             </div>
             <p className='text-white text-lg font-medium leading-7'>
               {' '}

@@ -2,6 +2,7 @@
 
 // import React from 'react';
 import { Award, Shield } from 'lucide-react';
+import Logo from './Layout/Header/Logo';
 
 interface Student {
   rollNumber: string;
@@ -49,9 +50,10 @@ export function Certificate({ student }: CertificateProps) {
       <div className="relative z-10 p-12 flex flex-col h-full">
         <div className="flex items-start justify-between mb-6">
           <div className="flex items-center gap-3">
-            <div className="w-20 h-20 bg-amber-600 rounded-full flex items-center justify-center">
+            {/* <div className="w-20 h-20 bg-amber-600 rounded-full flex items-center justify-center">
               <Shield className="w-12 h-12 text-white" />
-            </div>
+            </div> */}
+            <div className='logo-sst' >   <Logo /> </div>
             <div>
               <h1 className="text-xl font-bold text-amber-900 leading-tight">
                 SST COMPUTER INSTITUTE
