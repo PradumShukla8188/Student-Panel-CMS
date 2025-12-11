@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "name": "ALKREH",
+        "code": "SST24189",
+        "image": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "type": "student"
+    },
+    {
+        "id": 2,
+        "name": "ROHIT ACHARYA",
+        "code": "SST24458",
+        "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "type": "student"
+    },
+    {
+        "id": 3,
+        "name": "DHANANJAY KUMAR",
+        "code": "SST/24/22025",
+        "image": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "type": "center"
+    },
+    {
+        "id": 4,
+        "name": "CHETAN KUMAR TRIPATHI",
+        "code": "SST/24/28028",
+        "image": "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "type": "center"
+    },
+    {
+        "id": 5,
+        "name": "ABHI ANSH SHEKHR",
+        "code": "SST/24/28428",
+        "image": "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "type": "center"
+    }
+]

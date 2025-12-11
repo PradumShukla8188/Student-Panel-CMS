@@ -2,6 +2,7 @@
 
 // import React from 'react';
 import { GraduationCap, Award, CheckCircle } from 'lucide-react';
+import Logo from './Layout/Header/Logo';
 
 interface Subject {
   name: string;
@@ -56,9 +57,10 @@ export function Marksheet({ student }: MarksheetProps) {
         <div className="bg-white rounded-lg shadow-md p-6 mb-6">
           <div className="flex items-start justify-between mb-4">
             <div className="flex items-center gap-3">
-              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center">
+              {/* <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center">
                 <GraduationCap className="w-10 h-10 text-white" />
-              </div>
+              </div> */}
+              <div className='logo-sst' >   <Logo /> </div>
               <div>
                 <h1 className="text-2xl font-bold text-blue-900 leading-tight">
                   SST COMPUTER INSTITUTE

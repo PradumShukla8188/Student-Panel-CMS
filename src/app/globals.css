@@ -27,7 +27,7 @@
   }
 
   section {
-    @apply py-14
+    @apply py-0
   }
 
   h1 {
@@ -47,4 +47,18 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 25s linear infinite;
 }

@@ -55,6 +55,7 @@ const Companies = () => {
         const res = await fetch('/api/data')
         if (!res.ok) throw new Error('Failed to fetch')
         const data = await res.json()
+        // console.log('Fetched companies data:', data.Companiesdata)
         setCompianes(data.Companiesdata)
       } catch (error) {
         console.error('Error fetching services:', error)
@@ -78,7 +79,7 @@ const Companies = () => {
                   alt={item.imgSrc}
                   width={100}
                   height={100}
-                  // className='w-auto'
+                  className='w-auto'
                 />
               </div>
             ))}
