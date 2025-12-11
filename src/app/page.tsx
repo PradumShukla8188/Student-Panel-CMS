@@ -12,6 +12,7 @@ import ActionButtons from './components/ActionButtons'
 import StudentShowcase from './components/StudentShowcase'
 import { BookOpen } from 'lucide-react'
 import HeroSlider from './components/HeroSlider'
+import AboutDeveloper from './components/public/AboutDeveloper/AboutDeveloper'
 // import Header from './components/Header'
 export const metadata: Metadata = {
   title: 'SSTCI',
@@ -88,7 +89,10 @@ export default function Home() {
                 </div>
               </div>
             </div>
+           
           </div>
+
+           <AboutDeveloper />
         </main>
       </div>
     </main>

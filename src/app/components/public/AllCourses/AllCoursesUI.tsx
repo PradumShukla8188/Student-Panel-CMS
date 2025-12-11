@@ -138,7 +138,7 @@ const AllCoursesUI = () => {
   ))
 
   return (
-    <section id='courses-section'>
+    <section id='courses-section' className='mt-5'>
       <div className='container mx-auto max-w-7xl px-4'>
         <div className='flex flex-col sm:flex-row justify-between sm:items-center gap-5 mb-4'>
           <h2 className='font-bold tracking-tight'>{isAllCourseRoute?"All Course":"Popular Courses"}</h2>

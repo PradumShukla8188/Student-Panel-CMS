@@ -88,7 +88,7 @@ export default function StudentShowcase() {
                 sm:min-w-[40%] 
                 md:min-w-[33%] 
                 lg:min-w-[25%]
-                bg-gradient-to-br 
+                bg-linear-to-br 
                 from-lime-400 
                 to-lime-500 
                 rounded-lg 
