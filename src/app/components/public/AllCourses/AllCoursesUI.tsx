@@ -14,6 +14,7 @@ interface Name {
   profession: string
   duration:string
   category:
+  |'basiccomputer'
   | 'webdevelopment'
   | 'mobiledevelopment'
   | 'datascience'
@@ -50,6 +51,7 @@ const AllCoursesUI = () => {
   // -------------------------------------------------------------
 
   const [selectedButton, setSelectedButton] = useState<
+  |'basiccomputer'
     | 'mobiledevelopment'
     | 'webdevelopment'
     | 'datascience'
@@ -57,6 +59,8 @@ const AllCoursesUI = () => {
     | 'all'
     | null
   >('webdevelopment')
+  const basicComputer=courseDetail?.filter(
+    (name)=>name?.category==='basiccomputer')
   const mobileDevelopment = courseDetail.filter(
     (name) => name.category === 'mobiledevelopment'
   )
@@ -71,6 +75,7 @@ const AllCoursesUI = () => {
   )
 
   let selectedNames: Name[] = []
+  
   if (selectedButton === 'mobiledevelopment') {
     selectedNames = mobileDevelopment
   } else if (selectedButton === 'webdevelopment') {
@@ -79,9 +84,11 @@ const AllCoursesUI = () => {
     selectedNames = dataScience
   } else if (selectedButton === 'cloudcomputing') {
     selectedNames = cloudComputing
-  }
+  } else if(selectedButton==='basiccomputer'){
+    selectedNames=basicComputer
 
-  const nameElements = selectedNames.map((name, index) => (
+  }
+  const nameElements = selectedNames?.map((name, index) => (
     <div id='Courses' key={index} className='shadow-lg rounded-xl group flex'>
       <div className='py-5 lg:py-0 flex flex-col'>
         <div className='overflow-hidden rounded-lg bg-gray-100'>
@@ -150,6 +157,17 @@ const AllCoursesUI = () => {
         </div>
         <div className='flex nowhitespace space-x-5 rounded-xl bg-white p-1 overflow-x-auto mb-4'>
           {/* FOR DESKTOP VIEW */}
+          <button
+            onClick={() => setSelectedButton('basiccomputer')}
+            className={
+              'bg-white' +
+              (selectedButton === 'basiccomputer'
+                ? 'text-black border-b-2 border-yellow-200'
+                : 'text-black/40') +
+              ' pb-2 text-lg hidden sm:block hover:cursor-pointer'
+            }>
+            Basic Computer
+          </button>
           <button
             onClick={() => setSelectedButton('webdevelopment')}
             className={

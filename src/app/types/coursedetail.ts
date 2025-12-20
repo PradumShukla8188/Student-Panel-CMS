@@ -5,6 +5,7 @@ export type CourseDetailType = {
   price: string
   duration:string
   category:
+  |'basiccomputer'
     | 'mobiledevelopment'
     | 'webdevelopment'
     | 'datascience'

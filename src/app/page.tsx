@@ -91,8 +91,10 @@ export default function Home() {
             </div>
            
           </div>
+          <div>
 
            <AboutDeveloper />
+           </div>
         </main>
       </div>
     </main>
