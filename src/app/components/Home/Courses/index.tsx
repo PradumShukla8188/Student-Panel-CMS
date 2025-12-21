@@ -14,6 +14,7 @@ interface Name {
   profession: string
   duration:string
   category:
+  |'basiccomputer'
   | 'webdevelopment'
   | 'mobiledevelopment'
   | 'datascience'
@@ -50,18 +51,22 @@ const NamesList = () => {
   // -------------------------------------------------------------
 
   const [selectedButton, setSelectedButton] = useState<
+    |'basiccomputer'
     | 'mobiledevelopment'
     | 'webdevelopment'
     | 'datascience'
     | 'cloudcomputing'
     | 'all'
     | null
-  >('webdevelopment')
-  const mobileDevelopment = courseDetail.filter(
-    (name) => name.category === 'mobiledevelopment'
+  >('basiccomputer')
+  const basicComputer=courseDetail?.filter(
+    (name)=>name?.category==='basiccomputer'
   )
-  const webDevelopment = courseDetail.filter(
-    (name) => name.category === 'webdevelopment'
+  const mobileDevelopment = courseDetail?.filter(
+    (name) => name?.category === 'mobiledevelopment'
+  )
+  const webDevelopment = courseDetail?.filter(
+    (name) => name?.category === 'webdevelopment'
   )
   const dataScience = courseDetail.filter(
     (name) => name.category === 'datascience'
@@ -71,6 +76,9 @@ const NamesList = () => {
   )
 
   let selectedNames: Name[] = []
+  if (selectedButton==='basiccomputer'){
+    selectedNames=basicComputer
+  }
   if (selectedButton === 'mobiledevelopment') {
     selectedNames = mobileDevelopment
   } else if (selectedButton === 'webdevelopment') {

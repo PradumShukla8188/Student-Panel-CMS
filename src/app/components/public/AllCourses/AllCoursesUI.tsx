@@ -93,8 +93,8 @@ const AllCoursesUI = () => {
       <div className='py-5 lg:py-0 flex flex-col'>
         <div className='overflow-hidden rounded-lg bg-gray-100'>
           <Image
-            src={name.imageSrc}
-            alt={name.course}
+            src={name?.imageSrc}
+            alt={name?.course}
             width={700}
             height={700}
             className='h-full w-full object-cover object-center group-hover:scale-125 transition duration-300 ease-in-out'
@@ -112,14 +112,14 @@ const AllCoursesUI = () => {
               <p
                 aria-hidden='true'
                 className='text-xl font-semibold group-hover:text-primary group-hover:cursor-pointer'>
-                {name.profession}
+                {name?.profession}
               </p>
             </Link>
           </div>
           <div className='flex justify-between border-solid border-2 rounded-md p-2'>
             <p>{name?.duration}</p>
             <div className='flex flex-row space-x-4'>
-              <div className='flex'>
+              {/* <div className='flex'>
                 <Image
                   src={'/images/courses/account.svg'}
                   width={18}
@@ -136,7 +136,8 @@ const AllCoursesUI = () => {
                   alt='star'
                 />
                 <p className='ml-1'>4.5</p>
-              </div>
+              </div> */}
+              <Link href="/">Get Details</Link>
             </div>
           </div>
         </div>
@@ -214,6 +215,16 @@ const AllCoursesUI = () => {
           </button>
 
           {/* FOR MOBILE VIEW */}
+          <Icon
+            icon='solar:global-line-duotone'
+            onClick={() => setSelectedButton('basiccomputer')}
+            className={
+              'text-5xl sm:hidden block ' +
+              (selectedButton === 'basiccomputer'
+                ? 'border-b-2 border-yellow-200'
+                : 'text-gray-400')
+            }
+          />
           <Icon
             icon='solar:global-line-duotone'
             onClick={() => setSelectedButton('webdevelopment')}
