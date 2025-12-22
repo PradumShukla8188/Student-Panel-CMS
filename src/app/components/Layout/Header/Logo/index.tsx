@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Logo: React.FC = () => {
   return (
-    <Link href="/">
+    <Link href="/" className="flex items-center">
       <Image
         // src="/images/logo/logo.svg"
         // src="/images/logo/SSTCI.jpg"

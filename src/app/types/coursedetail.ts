@@ -1,4 +1,5 @@
 export type CourseDetailType = {
+  id:number
   course: string
   imageSrc: string
   profession: string
