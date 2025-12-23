@@ -1,5 +1,5 @@
-.error{
-    color:red
+.error {
+    color: red
 }
 
 .developer-heading {
@@ -9,7 +9,62 @@
     font-weight: 600;
 }
 
-.developer-info{
-    
+.developer-info {
+
     display: flex;
+}
+
+.admit-card,
+.admit-card * {
+    color: #000000 !important;
+    /* background-color: transparent !important; */
+    border-color: #000000 !important;
+
+    /* disable modern color functions */
+    --tw-text-opacity: 1 !important;
+    --tw-bg-opacity: 1 !important;
+
+    filter: none !important;
+    box-shadow: none !important;
+}
+
+.admit-card-header {
+  background-color: rgb(43, 107, 226);   /* ✅ no quotes */
+  color: #ffffff;
+  padding: 16px;
+
+  /* 👇 CENTER CONTENT */
+  text-align: center;
+
+  /* optional styling */
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.top-header-wrapper{
+    display: flex;
+    gap:200px
+
+}
+
+.outer-table{
+    display: flex;
+    justify-content: space-between;
+}
+
+.inner-table{
+    display: flex;
+}
+
+.table-body {
+    
+}
+
+table {
+    border-collapse: separate; /* or collapse */
+    border-spacing: 1px; /* space between cells */
+}
+
+.table-body td {
+    background-color: rgb(231, 226, 236);
 }

@@ -2,6 +2,11 @@
 
 import Image from "next/image"
 import { useState } from "react"
+import { useRef } from "react"
+import html2canvas from "html2canvas"
+import jsPDF from "jspdf"
+import Logo from "@/app/components/Layout/Header/Logo"
+
 
 type AdmitCard = {
   rollNumber: string
@@ -26,6 +31,8 @@ const admitCardData: AdmitCard[] = [
 ]
 
 export default function AdmitCardPage() {
+  const cardRef = useRef<HTMLDivElement | null>(null)
+
   const [roll, setRoll] = useState("")
   const [card, setCard] = useState<AdmitCard | null>(null)
   const [error, setError] = useState("")
@@ -49,9 +56,89 @@ export default function AdmitCardPage() {
     window.print()
   }
 
-  const handleDownload = () => {
-    window.print() // Save as PDF
-  }
+  // const handleDownload = () => {
+  //   window.print() // Save as PDF
+  // }
+
+  //  const handleDownload = async () => {
+  //   if (!cardRef.current) return;
+
+  //   const canvas = await html2canvas(cardRef.current, {
+  //     scale: 2,
+  //     backgroundColor: "#ffffff",
+  //     useCORS: true,
+  //     onclone: (doc) => {
+  //       const el = doc.body;
+
+  //       // force safe colors everywhere
+  //       el.querySelectorAll("*").forEach((node: any) => {
+  //         node.style.color = "rgb(0,0,0)";
+  //         node.style.backgroundColor =
+  //           node.style.backgroundColor === "transparent"
+  //             ? "transparent"
+  //             : "rgb(255,255,255)";
+  //         node.style.borderColor = "rgb(0,0,0)";
+  //       });
+  //     },
+  //   });
+
+  //   const imgData = canvas.toDataURL("image/png");
+
+  //   const pdf = new jsPDF("p", "mm", "a4");
+  //   const w = pdf.internal.pageSize.getWidth();
+  //   const h = (canvas.height * w) / canvas.width;
+
+  //   pdf.addImage(imgData, "PNG", 0, 0, w, h);
+  //   pdf.save(`Admit-Card-${card?.rollNumber}.pdf`);
+  // };
+
+
+  const handleDownload = async () => {
+    if (!cardRef.current) return;
+
+    // 👇 ensure page is at top
+    window.scrollTo(0, 0);
+
+    // 👇 wait for images
+    const images = cardRef.current.querySelectorAll("img");
+    await Promise.all(
+      Array.from(images).map(
+        (img) =>
+          new Promise((resolve) => {
+            if (img.complete) resolve(true);
+            else img.onload = () => resolve(true);
+          })
+      )
+    );
+
+    const canvas = await html2canvas(cardRef.current, {
+      scale: 2,
+      backgroundColor: "#ffffff",
+      useCORS: true,
+      scrollX: 0,
+      scrollY: -window.scrollY,
+      windowWidth: cardRef.current.scrollWidth,
+      windowHeight: cardRef.current.scrollHeight,
+    });
+
+    const imgData = canvas.toDataURL("image/png");
+
+    const pdf = new jsPDF("p", "mm", "a4");
+    const pageWidth = pdf.internal.pageSize.getWidth();
+    const margin = 10;
+
+    const imgWidth = pageWidth - margin * 2;
+    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+    pdf.addImage(imgData, "PNG", margin, margin, imgWidth, imgHeight);
+    pdf.save(`Admit-Card-${card?.rollNumber}.pdf`);
+  };
+
+
+
+
+
+
 
   return (
     <div className="min-h-screen bg-gray-100 flex justify-center p-4">
@@ -88,58 +175,109 @@ export default function AdmitCardPage() {
 
         {/* ADMIT CARD */}
         {card && (
-          <div className="bg-white border-4 border-amber-700 rounded print:border-black">
+          <>
+            <div
+              ref={cardRef}
+              className="admit-card"
+              style={{
+                width: "794px",
+                padding: "20px",
+                backgroundColor: "#ffffff",
+                color: "#000000",
+                border: "4px solid #92400e",
+                fontFamily: "Arial, sans-serif",
+              }}
+            >
+              {/* Header */}
 
-            {/* Header with color */}
-            <div className="bg-amber-900 text-white text-center py-4 rounded-t">
-              <h1 className="text-3xl font-bold uppercase">
-                SST Computer Institute
-              </h1>
-              <p className="text-sm">
-                Authorised Computer Training Centre
-              </p>
-              <h2 className="text-lg font-semibold mt-1 tracking-wide">
-                ADMIT CARD
-              </h2>
-            </div>
 
-            {/* Body */}
-            <div className="p-6">
-
-              <div className="grid grid-cols-3 gap-4">
-
-                {/* Student Details */}
-                <div className="col-span-2 space-y-2 text-sm">
-                  <p><strong>Name:</strong> {card.name}</p>
-                  <p><strong>Roll No:</strong> {card.rollNumber}</p>
-                  <p><strong>Course:</strong> {card.course}</p>
-                  <p><strong>Exam Date:</strong> {card.examDate}</p>
-                  <p><strong>Exam Time:</strong> {card.examTime}</p>
-                  <p><strong>Exam Centre:</strong> {card.center}</p>
-                </div>
-
-                {/* Photo */}
-                <div className="flex justify-end">
-                  {/* <img
-                    src={card.photo}
-                    alt="Student Photo"
-                    className="w-32 h-40 border-2 border-black object-cover"
-                  /> */}
+              <div
+                style={{
+                  textAlign: "center",
+                  paddingBottom: "10px",
+                  borderBottom: "2px solid #92400e",
+                  marginBottom: "15px",
+                }}
+              >
+                <div className="top-header-wrapper">
                   <Image
-                  src="/images/authorised/student.png"
-                  alt="Student photo"
-                  className="w-32 h-40 border-2 border-black object-cover"
-                  width={32}
-                  height={40}
+                    src="/images/logo/SST-logo.png"
+                    alt="logo"
+                    width={75}
+                    height={50}
+                    quality={100}
                   />
+                  <div>
+                    <h1 style={{ fontSize: "22px", fontWeight: "700", margin: 0 }}>
+                      SST Computer Institute
+                    </h1>
+                    <p style={{ fontSize: "12px", margin: "2px 0" }}>
+                      Authorised Computer Training Centre
+                    </p>
+                  </div>
                 </div>
+                <h2 style={{ fontSize: "16px", fontWeight: "600", margin: "5px 0" }}>
+                  ADMIT CARD
+                </h2>
+              </div>
+
+
+
+              {/* Student Info + Photo */}
+              <div >
+                <div >
+                  <table className="outer-table">
+                    <tr>
+                    <td>
+                    <table className="inner-table">
+                      <tbody className="table-body">
+                        <tr>
+                          <td style={{ fontWeight: "600" }}>Name of Candidate</td>
+                          <td >{card.name}</td>
+                        </tr>
+                        <tr>
+                          <td style={{ fontWeight: "600", padding: "4px" }}>Roll Number</td>
+                          <td style={{ padding: "4px" }}>{card.rollNumber}</td>
+                        </tr>
+                        <tr>
+                          <td style={{ fontWeight: "600", padding: "4px" }}>Course</td>
+                          <td style={{ padding: "4px" }}>{card.course}</td>
+                        </tr>
+                        <tr>
+                          <td style={{ fontWeight: "600", padding: "4px" }}>Exam Date</td>
+                          <td style={{ padding: "4px" }}>{card.examDate}</td>
+                        </tr>
+                        <tr>
+                          <td style={{ fontWeight: "600", padding: "4px" }}>Exam Time</td>
+                          <td style={{ padding: "4px" }}>{card.examTime}</td>
+                        </tr>
+                        <tr>
+                          <td style={{ fontWeight: "600", padding: "4px" }}>Exam Centre</td>
+                          <td style={{ padding: "4px" }}>{card.center}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    </td>
+                    <td>
+                      <div style={{ flex: 1, display: "flex", justifyContent: "center" }}>
+                        <img
+                          src="/images/authorised/student.png"
+                          alt="Student photo"
+                          style={{ width: "128px", height: "160px", border: "2px solid #000", objectFit: "cover" }}
+                        />
+                      </div>
+                    </td>
+                    </tr>
+                  </table>
+                </div>
+
 
               </div>
 
               {/* Instructions */}
-              <div className="mt-4 border-t pt-3 text-sm">
-                <p className="font-semibold">Instructions:</p>
-                <ul className="list-disc ml-5">
+              <div style={{ fontSize: "12px", borderTop: "1px solid #92400e", paddingTop: "6px" }}>
+                <p style={{ fontWeight: "600" }}>Instructions for the Candidate:</p>
+                <ul style={{ paddingLeft: "20px" }}>
                   <li>Admit card is mandatory for entry.</li>
                   <li>Bring a valid ID proof.</li>
                   <li>Reporting time is 30 minutes early.</li>
@@ -147,47 +285,46 @@ export default function AdmitCardPage() {
               </div>
 
               {/* Signatures */}
-              <div className="mt-10 flex justify-between items-end">
-
-                <div className="text-center">
-                  <p className="border-t border-black w-40 pt-1">
+              <div style={{ display: "flex", justifyContent: "space-between", marginTop: "30px", alignItems: "flex-end" }}>
+                <div style={{ textAlign: "center" }}>
+                  <p style={{ borderTop: "1px solid #000", width: "150px", margin: "0 auto", paddingTop: "4px" }}>
                     Student Signature
                   </p>
                 </div>
 
-                <div className="text-center">
+                <div style={{ textAlign: "center" }}>
                   <img
                     src="/images/authorised/signature.png"
                     alt="Director Signature"
-                    className="h-12 mx-auto"
+                    style={{ height: "50px", marginBottom: "4px" }}
                   />
-                  <p className="border-t border-black w-48 pt-1">
+                  <p style={{ borderTop: "1px solid #000", width: "180px", margin: "0 auto", paddingTop: "4px", fontSize: "12px" }}>
                     Authorized Signatory<br />Director
                   </p>
                 </div>
-
               </div>
-
-              {/* Footer Buttons */}
-              <div className="mt-6 flex gap-4 print:hidden">
-                <button
-                  onClick={handleDownload}
-                  className="flex-1 bg-green-700 text-white py-2 rounded hover:bg-green-800"
-                >
-                  Download PDF
-                </button>
-
-                <button
-                  onClick={handlePrint}
-                  className="flex-1 bg-gray-700 text-white py-2 rounded hover:bg-gray-800"
-                >
-                  Print Admit Card
-                </button>
-              </div>
-
             </div>
-          </div>
+
+
+            {/* Footer Buttons */}
+            <div className="mt-6 flex gap-4 print:hidden" style={{ marginTop: "20px" }}>
+              <button
+                onClick={handleDownload}
+                className="flex-1 bg-green-700 text-white py-2 rounded hover:bg-green-800"
+              >
+                Download PDF
+              </button>
+
+              <button
+                onClick={handlePrint}
+                className="flex-1 bg-gray-700 text-white py-2 rounded hover:bg-gray-800"
+              >
+                Print Admit Card
+              </button>
+            </div>
+          </>
         )}
+
       </div>
     </div>
   )
