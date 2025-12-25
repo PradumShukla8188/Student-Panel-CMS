@@ -1,6 +1,6 @@
 "use client";
 
-import TestimonialSkeleton from "../Skeleton/Testimonial";
+import TestimonialSkeleton from "../../Skeleton/Testimonial";
 import { useEffect, useState } from "react";
 import { TestimonialType } from "@/app/types/testimonial";
 import Image from "next/image";
@@ -58,20 +58,19 @@ const AboutDeveloper = () => {
 
   return (
     <main>
-      <section id="testimonial-section" className="bg-cream">
+      <section id="testimonial-section" className="bg-cream px-4 py-12">
         <div className="container">
-          <div className="developer-heading">
-            <h3>Developer Team</h3>
+          <div className="developer-heading text-4xl mt-5 text-cyan-600">
+           Developer Team
           </div>
-
-          <Slider key={testimonial.length} {...settings}>
+          <div className="developer-info">
             {loading
               ? Array.from({ length: 3 }).map((_, i) => (
                 <div key={`skeleton-${i}`}>
                   <TestimonialSkeleton />
                 </div>
               ))
-              : testimonial.map((items, i) => (
+              : testimonial?.map((items, i) => (
                 <div key={`dev-${i}`}>
                   <div className="bg-white m-4 pt-8 px-12 pb-10 text-center rounded-lg">
                     <div className="relative z-0 flex justify-center items-center 
@@ -86,8 +85,8 @@ const AboutDeveloper = () => {
                       />
                     </div>
 
-                    <p className="text-sm pt-4 pb-2">{items.profession}</p>
-                    <p className="text-2xl font-semibold pb-3">{items.name}</p>
+                    <p className="text-sm pt-4 pb-2  text-amber-900">{items.profession}</p>
+                    <p className="text-2xl font-semibold pb-3 text-amber-800">{items.name}</p>
 
                     <Image
                       src={items.starimg}
@@ -97,13 +96,13 @@ const AboutDeveloper = () => {
                       height={32}
                     />
 
-                    <p className="text-lg font-medium leading-7">
+                    <p className="leading-7">
                       {items.detail}
                     </p>
                   </div>
                 </div>
               ))}
-          </Slider>
+          </div>
         </div>
       </section>
     </main>

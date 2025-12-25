@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
       {/* Top Bar */}
-      <div className="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-700 text-white">
+      <div className="bg-gradient from-amber-600 via-amber-500 to-amber-700 text-white">
         <div className="container mx-auto px-4 py-2 flex justify-between items-center text-xs sm:text-sm">
           <div className="flex flex-col sm:flex-row sm:items-center sm:gap-6 gap-1">
             <div className="flex items-center gap-2">
@@ -52,9 +52,9 @@ export default function Header() {
       <nav className="bg-white border-b">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between py-4">
-            <Link href="/" className="flex items-center">
+            {/* <Link href={"/"} className="flex items-center"> */}
               <Logo />
-            </Link>
+            {/* </Link> */}
 
             {/* Desktop Menu */}
             <ul className="hidden lg:flex items-center gap-8 text-sm font-semibold">
@@ -62,12 +62,12 @@ export default function Header() {
               <li><Link href="/about" className="hover:text-amber-600 transition-colors">ABOUT</Link></li>
               {/* COURSES DROPDOWN */}
               <li className="relative group">
-                <button className="hover:text-amber-600 transition-colors">
+                <Link href="/all-courses" className="hover:text-amber-600 transition-colors">
                   COURSES
-                </button>
+                </Link>
 
                 {/* Dropdown */}
-                <div className="absolute left-0 mt-2 bg-white shadow-md rounded-lg w-48 opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all duration-200">
+                {/* <div className="absolute left-0 mt-2 bg-white shadow-md rounded-lg w-48 opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all duration-200">
                   <ul className="py-2 text-sm">
                     <li><Link href="/courses/hardware" className="block px-4 py-2 hover:bg-amber-50">Hardware Courses</Link></li>
                     <li><Link href="/courses/software" className="block px-4 py-2 hover:bg-amber-50">Software Courses</Link></li>
@@ -75,7 +75,7 @@ export default function Header() {
                     <li><Link href="/courses/english" className="block px-4 py-2 hover:bg-amber-50">Spoken English</Link></li>
                     <li><Link href="/courses/account" className="block px-4 py-2 hover:bg-amber-50">Accounting</Link></li>
                   </ul>
-                </div>
+                </div> */}
               </li>
 
               {/* DOWNLOAD DROPDOWN */}
@@ -86,7 +86,7 @@ export default function Header() {
 
                 <div className="absolute left-0 mt-2 bg-white shadow-md rounded-lg w-48 opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all duration-200">
                   <ul className="py-2 text-sm">
-                    <li><Link href="/download/admin-card" className="block px-4 py-2 hover:bg-amber-50">Admin Card</Link></li>
+                    <li><Link href="/admit-card" className="block px-4 py-2 hover:bg-amber-50">Admit Card</Link></li>
                     <li><Link href="/download/student-result" className="block px-4 py-2 hover:bg-amber-50">Student Result</Link></li>
                     <li><Link href="/download/forms" className="block px-4 py-2 hover:bg-amber-50">Center Forms</Link></li>
                     <li><Link href="/download/prospectus" className="block px-4 py-2 hover:bg-amber-50">Prospectus</Link></li>

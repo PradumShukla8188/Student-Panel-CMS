@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const QuickStart = () => {
   return (
     <div className="pb-10 md:scroll-m-[180px] scroll-m-28" id="start">
@@ -6,9 +8,9 @@ export const QuickStart = () => {
         <h6 className="text-black text-lg font-medium">1. Requirements</h6>
         <p className="text-base font-medium text-muted text-opacity-60">
           Before proceeding, you need to have the latest stable{" "}
-          <a href="https://nodejs.org/" className="text-primary">
+          <Link href="https://nodejs.org/" className="text-primary">
             node.js
-          </a>{" "}
+          </Link>{" "}
         </p>
         <h6 className="mt-4 mb-2 text-black font-medium text-base">
           Recommended environment:
