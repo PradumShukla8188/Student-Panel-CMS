@@ -38,7 +38,7 @@ export default function Home() {
             <div className="flex items-center justify-center gap-3 mb-6">
               <BookOpen className="h-8 w-8 text-cyan-600" />
               <h2 className="text-4xl font-bold text-cyan-600">
-                WELCOME TO SST COMPUTER INSTITUTE
+                WELCOME TO SST COMPUTER & WELL KNOWLEDGE INSTITUTE
               </h2>
             </div>
 
@@ -64,7 +64,7 @@ export default function Home() {
 
               <div className="mt-6 bg-white rounded-lg p-6 shadow-lg border border-gray-200">
                 <h3 className="text-2xl font-bold text-amber-900 mb-4">
-                  Welcome to SST COMPUTER INSTITUTE
+                  Welcome to  SST COMPUTER & WELL KNOWLEDGE INSTITUTE
                 </h3>
                 <div className="space-y-3 text-gray-700">
                   <p className="leading-relaxed">
@@ -89,12 +89,12 @@ export default function Home() {
                 </div>
               </div>
             </div>
-           
+
           </div>
           <div>
 
-           <AboutDeveloper />
-           </div>
+            <AboutDeveloper />
+          </div>
         </main>
       </div>
     </main>

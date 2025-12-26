@@ -23,7 +23,25 @@ const admitCardData: AdmitCard[] = [
     rollNumber: "26",
     name: "Gagandeep Singh",
     course: "ADCA",
-    examDate: "25 March 2025",
+    examDate: "25 March 2026",
+    examTime: "10:00 AM - 1:00 PM",
+    center: "SST Computer Institute, Main Campus",
+    photo: "/images/student-photo.jpg"
+  },
+  {
+    rollNumber: "27",
+    name: "Pradum Shukla",
+    course: "O Level",
+    examDate: "27 March 2026",
+    examTime: "10:00 AM - 1:00 PM",
+    center: "SST Computer Institute, Main Campus",
+    photo: "/images/student-photo.jpg"
+  },
+  {
+    rollNumber: "28",
+    name: "Abhisekh",
+    course: "CCC",
+    examDate: "29 March 2026",
     examTime: "10:00 AM - 1:00 PM",
     center: "SST Computer Institute, Main Campus",
     photo: "/images/student-photo.jpg"
@@ -56,50 +74,12 @@ export default function AdmitCardPage() {
     window.print()
   }
 
-  // const handleDownload = () => {
-  //   window.print() // Save as PDF
-  // }
-
-  //  const handleDownload = async () => {
-  //   if (!cardRef.current) return;
-
-  //   const canvas = await html2canvas(cardRef.current, {
-  //     scale: 2,
-  //     backgroundColor: "#ffffff",
-  //     useCORS: true,
-  //     onclone: (doc) => {
-  //       const el = doc.body;
-
-  //       // force safe colors everywhere
-  //       el.querySelectorAll("*").forEach((node: any) => {
-  //         node.style.color = "rgb(0,0,0)";
-  //         node.style.backgroundColor =
-  //           node.style.backgroundColor === "transparent"
-  //             ? "transparent"
-  //             : "rgb(255,255,255)";
-  //         node.style.borderColor = "rgb(0,0,0)";
-  //       });
-  //     },
-  //   });
-
-  //   const imgData = canvas.toDataURL("image/png");
-
-  //   const pdf = new jsPDF("p", "mm", "a4");
-  //   const w = pdf.internal.pageSize.getWidth();
-  //   const h = (canvas.height * w) / canvas.width;
-
-  //   pdf.addImage(imgData, "PNG", 0, 0, w, h);
-  //   pdf.save(`Admit-Card-${card?.rollNumber}.pdf`);
-  // };
-
 
   const handleDownload = async () => {
     if (!cardRef.current) return;
 
-    // 👇 ensure page is at top
     window.scrollTo(0, 0);
 
-    // 👇 wait for images
     const images = cardRef.current.querySelectorAll("img");
     await Promise.all(
       Array.from(images).map(
@@ -228,45 +208,45 @@ export default function AdmitCardPage() {
                 <div >
                   <table className="outer-table">
                     <tr>
-                    <td>
-                    <table className="inner-table">
-                      <tbody className="table-body">
-                        <tr>
-                          <td style={{ fontWeight: "600" }}>Name of Candidate</td>
-                          <td >{card.name}</td>
-                        </tr>
-                        <tr>
-                          <td style={{ fontWeight: "600", padding: "4px" }}>Roll Number</td>
-                          <td style={{ padding: "4px" }}>{card.rollNumber}</td>
-                        </tr>
-                        <tr>
-                          <td style={{ fontWeight: "600", padding: "4px" }}>Course</td>
-                          <td style={{ padding: "4px" }}>{card.course}</td>
-                        </tr>
-                        <tr>
-                          <td style={{ fontWeight: "600", padding: "4px" }}>Exam Date</td>
-                          <td style={{ padding: "4px" }}>{card.examDate}</td>
-                        </tr>
-                        <tr>
-                          <td style={{ fontWeight: "600", padding: "4px" }}>Exam Time</td>
-                          <td style={{ padding: "4px" }}>{card.examTime}</td>
-                        </tr>
-                        <tr>
-                          <td style={{ fontWeight: "600", padding: "4px" }}>Exam Centre</td>
-                          <td style={{ padding: "4px" }}>{card.center}</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    </td>
-                    <td>
-                      <div style={{ flex: 1, display: "flex", justifyContent: "center" }}>
-                        <img
-                          src="/images/authorised/student.png"
-                          alt="Student photo"
-                          style={{ width: "128px", height: "160px", border: "2px solid #000", objectFit: "cover" }}
-                        />
-                      </div>
-                    </td>
+                      <td>
+                        <table className="inner-table">
+                          <tbody className="table-body">
+                            <tr>
+                              <td style={{ fontWeight: "600" }}>Name of Candidate</td>
+                              <td >{card.name}</td>
+                            </tr>
+                            <tr>
+                              <td style={{ fontWeight: "600", padding: "4px" }}>Roll Number</td>
+                              <td style={{ padding: "4px" }}>{card.rollNumber}</td>
+                            </tr>
+                            <tr>
+                              <td style={{ fontWeight: "600", padding: "4px" }}>Course</td>
+                              <td style={{ padding: "4px" }}>{card.course}</td>
+                            </tr>
+                            <tr>
+                              <td style={{ fontWeight: "600", padding: "4px" }}>Exam Date</td>
+                              <td style={{ padding: "4px" }}>{card.examDate}</td>
+                            </tr>
+                            <tr>
+                              <td style={{ fontWeight: "600", padding: "4px" }}>Exam Time</td>
+                              <td style={{ padding: "4px" }}>{card.examTime}</td>
+                            </tr>
+                            <tr>
+                              <td style={{ fontWeight: "600", padding: "4px" }}>Exam Centre</td>
+                              <td style={{ padding: "4px" }}>{card.center}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                      <td>
+                        <div style={{ flex: 1, display: "flex", justifyContent: "center" }}>
+                          <img
+                            src="/images/authorised/student.png"
+                            alt="Student photo"
+                            style={{ width: "128px", height: "160px", border: "2px solid #000", objectFit: "cover" }}
+                          />
+                        </div>
+                      </td>
                     </tr>
                   </table>
                 </div>
