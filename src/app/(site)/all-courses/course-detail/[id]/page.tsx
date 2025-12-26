@@ -1,6 +1,7 @@
 
 
-import  CourseDetailData from "@/app/api/courseDetails/route"
+// import  CourseDetailData from "@/app/api/courseDetails/route"
+import { CourseDetailData } from "../../../../../data/course-data";
 import { notFound } from "next/navigation"
 
 type Props = {
@@ -9,24 +10,26 @@ type Props = {
   }>
 }
 
-const CourseDetailPage =async ({ params }: Props) => {
-    const {id}=await params
+
+
+const CourseDetailPage = async ({ params }: Props) => {
+  const { id } = await params
   const courseId = Number(id)
 
-  console.log("course id--->",courseId)
+  console.log("course id--->", courseId)
 
   const course = CourseDetailData.find(
     item => item?.id === courseId
   )
 
-  console.log("course--->",course)
+  console.log("course--->", course)
 
   if (!course) return notFound()
 
   return (
     <div className="max-w-5xl mx-auto p-6">
       <div className="grid md:grid-cols-2 gap-8">
-        
+
         {/* Image */}
         <div className="border rounded-lg p-6">
           <img
