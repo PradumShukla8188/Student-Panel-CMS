@@ -5,7 +5,6 @@ import { useState } from "react"
 import { useRef } from "react"
 import html2canvas from "html2canvas"
 import jsPDF from "jspdf"
-import Logo from "@/app/components/Layout/Header/Logo"
 
 
 type AdmitCard = {
@@ -113,12 +112,6 @@ export default function AdmitCardPage() {
     pdf.addImage(imgData, "PNG", margin, margin, imgWidth, imgHeight);
     pdf.save(`Admit-Card-${card?.rollNumber}.pdf`);
   };
-
-
-
-
-
-
 
   return (
     <div className="min-h-screen bg-gray-100 flex justify-center p-4">

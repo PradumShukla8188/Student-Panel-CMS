@@ -6,9 +6,10 @@ import { CourseDetailType } from '@/app/types/coursedetail'
 import CourseDetailSkeleton from '../../Skeleton/CourseDetail'
 import Link from 'next/link'
 import { useRouter ,usePathname} from 'next/navigation'
+import { CourseDetailData } from '@/data/course-data'
 
 interface Name {
-  id:number
+  id?:number
   imageSrc: string
   course: string
   price: string
@@ -26,7 +27,7 @@ const AllCoursesUI = () => {
   // -------------------------------------------------------------
   const router=useRouter()
   const pathname=usePathname()
-  const [courseDetail, setCourseDetail] = useState<CourseDetailType[]>([])
+  const [courseDetail, setCourseDetail] = useState<CourseDetailType[]>(CourseDetailData)
   const [loading, setLoading] = useState(true)
 
   console.log("pathnme-->",pathname)
@@ -34,21 +35,6 @@ const AllCoursesUI = () => {
   const isAllCourseRoute=pathname=="/all-courses"
 
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch('/api/courseDetails')
-        if (!res.ok) throw new Error('Failed to fetch.')
-        const data = await res.json()
-        setCourseDetail(data.CourseDetailData)
-      } catch (error) {
-        console.error('Error fetching services:', error)
-      } finally {
-        setLoading(false)
-      }
-    }
-    fetchData()
-  }, [])
   // -------------------------------------------------------------
 
   const [selectedButton, setSelectedButton] = useState<
@@ -120,24 +106,7 @@ const AllCoursesUI = () => {
           <div className='flex justify-between border-solid border-2 rounded-md p-2'>
             <p>{name?.duration}</p>
             <div className='flex flex-row space-x-4'>
-              {/* <div className='flex'>
-                <Image
-                  src={'/images/courses/account.svg'}
-                  width={18}
-                  height={20}
-                  alt='circle'
-                />
-                <p className='text-lightgrey ml-1'>120</p>
-              </div>
-              <div className='flex'>
-                <Image
-                  src={'/images/courses/Star.svg'}
-                  width={18}
-                  height={20}
-                  alt='star'
-                />
-                <p className='ml-1'>4.5</p>
-              </div> */}
+             
               <Link href={`/all-courses/course-detail/${name?.id}`}>Get Details</Link>
             </div>
           </div>

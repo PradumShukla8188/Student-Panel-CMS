@@ -5,12 +5,13 @@ import { useEffect, useState } from "react";
 import { TestimonialType } from "@/app/types/testimonial";
 import Image from "next/image";
 import dynamic from "next/dynamic";
+import { developerData } from "@/data/developer-data";
 
 const Slider = dynamic(() => import("react-slick"), { ssr: false });
 
 const AboutDeveloper = () => {
-  const [testimonial, setTestimonial] = useState<TestimonialType[]>([]);
-  const [loading, setLoading] = useState(true);
+  console.log("developerData-->", developerData);
+  const [testimonial, setTestimonial] = useState<TestimonialType[]>(developerData||[]);
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -21,24 +22,6 @@ const AboutDeveloper = () => {
     }, 200);
   }, []);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("/api/aboutDeveloper");
-        if (!response.ok) throw new Error("Failed to fetch developer data.");
-
-        const data = await response.json();
-        setTestimonial(data.developerData);
-      } catch (error) {
-        console.log("Error in fetching data--->", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-    console.log("Testimonial Data:", testimonial);
-  }, []);
 
   if (!isMounted) return null; // Prevent SSR mismatch
 
@@ -64,13 +47,7 @@ const AboutDeveloper = () => {
            Developer Team
           </div>
           <div className="developer-info">
-            {loading
-              ? Array.from({ length: 3 }).map((_, i) => (
-                <div key={`skeleton-${i}`}>
-                  <TestimonialSkeleton />
-                </div>
-              ))
-              : testimonial?.map((items, i) => (
+            { testimonial?.map((items, i) => (
                 <div key={`dev-${i}`}>
                   <div className="bg-white m-4 pt-8 px-12 pb-10 text-center rounded-lg">
                     <div className="relative z-0 flex justify-center items-center 

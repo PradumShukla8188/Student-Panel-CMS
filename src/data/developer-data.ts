@@ -1,9 +1,7 @@
 
 import { TestimonialType } from "@/app/types/testimonial"
-import { NextResponse } from "next/server"
 
-
-const developerData: TestimonialType[] = [
+export const developerData: TestimonialType[] = [
   {
     profession: 'Full Stack Developer',
     name: 'Pradumn Shukla',
@@ -31,8 +29,3 @@ const developerData: TestimonialType[] = [
 
 ]
 
-
-
-export const GET = () => {
-  return NextResponse.json({ developerData })
-}

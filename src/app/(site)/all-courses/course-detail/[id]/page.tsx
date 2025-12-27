@@ -1,6 +1,5 @@
 
 
-// import  CourseDetailData from "@/app/api/courseDetails/route"
 import { CourseDetailData } from "../../../../../data/course-data";
 import { notFound } from "next/navigation"
 
