@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import students from '@/data/students.json';
 import { useState } from "react";
 
-export default function StudentVerify() {
+export default function StudentResultVerify() {
     const [studentData, setStudentData] = useState<any>(null);
 
     const { register, handleSubmit, formState: { errors, isDirty } } = useForm({
@@ -51,7 +51,7 @@ export default function StudentVerify() {
           className="bg-white shadow-lg p-6 rounded-lg"
         >
           <h2 className="text-xl font-semibold mb-4 text-center text-cyan-600">
-            Verify Student Information
+            Result
           </h2>
 
           <label className="block mb-2 font-medium">
@@ -116,9 +116,11 @@ export default function StudentVerify() {
               <div className="border rounded p-4 space-y-2">
                 <p><span className="font-semibold">Name:</span> {studentData?.name}</p>
                 <p><span className="font-semibold">Roll No:</span> {studentData?.rollNumber}</p>
-                <p><span className="font-semibold">DOB:</span> {studentData?.dateOfBirth}</p>
+                <p><span className="font-semibold">Registration No:</span> {studentData?.registrationNumber}</p>
                 <p><span className="font-semibold">Course:</span> {studentData?.course}</p>
-                <p><span className="font-semibold">Status:</span> Verified</p>
+                <p><span className="font-semibold">Percentage:</span> {studentData?.percentage}</p>
+                <p><span className="font-semibold">Grade:</span> {studentData?.grade}</p>
+                
               </div>
             </div>
           )}

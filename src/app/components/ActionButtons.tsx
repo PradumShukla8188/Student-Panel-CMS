@@ -15,17 +15,23 @@ export default function ActionButtons() {
         STUDENT VERIFY
       </Button>
 
-      <Button className="w-64 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-semibold py-6 rounded-lg shadow-lg">
+      <Button 
+      onClick={() => Router.push('/student/student-login')}
+      className="w-64 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-semibold py-6 rounded-lg shadow-lg">
         <LogIn className="mr-2 h-5 w-5" />
         STUDENT LOGIN
       </Button>
 
-      <Button className="w-64 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-semibold py-6 rounded-lg shadow-lg">
+      <Button 
+      onClick={() => Router.push('/student/student-result-verify')}
+      className="w-64 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-semibold py-6 rounded-lg shadow-lg">
         <FileCheck className="mr-2 h-5 w-5" />
         STUDENT RESULT VERIFY
       </Button>
 
-      <Button className="w-64 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-semibold py-6 rounded-lg shadow-lg">
+      <Button
+      onClick={() => Router.push('/center/center-login')}
+      className="w-64 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-semibold py-6 rounded-lg shadow-lg">
         <Building2 className="mr-2 h-5 w-5" />
         CENTER LOGIN
       </Button>
