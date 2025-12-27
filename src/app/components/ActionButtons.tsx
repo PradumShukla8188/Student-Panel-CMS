@@ -1,12 +1,16 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { Button } from './ui/button';
 import { UserCheck, LogIn, FileCheck, Building2, CheckCircle } from 'lucide-react';
 
 export default function ActionButtons() {
+  const Router=useRouter();
   return (
     <div className="flex flex-col items-center gap-3 mb-8">
-      <Button className="w-64 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-semibold py-6 rounded-lg shadow-lg">
+      <Button
+      onClick={() => Router.push('/student/student-verify')}
+      className="w-64 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-semibold py-6 rounded-lg shadow-lg">
         <UserCheck className="mr-2 h-5 w-5" />
         STUDENT VERIFY
       </Button>
