@@ -68,3 +68,7 @@ table {
 .table-body td {
     background-color: rgb(231, 226, 236);
 }
+
+button{
+    cursor: pointer;
+}
