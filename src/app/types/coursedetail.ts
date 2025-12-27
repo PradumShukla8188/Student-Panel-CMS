@@ -1,12 +1,14 @@
 export type CourseDetailType = {
+  id: number
   course: string
   imageSrc: string
   profession: string
   price: string
-  duration:string
+  duration: string
   category:
-    | 'mobiledevelopment'
-    | 'webdevelopment'
-    | 'datascience'
-    | 'cloudcomputing'
+  | 'basiccomputer'
+  | 'mobiledevelopment'
+  | 'webdevelopment'
+  | 'datascience'
+  | 'cloudcomputing'
 }

@@ -38,35 +38,72 @@ const HourData: Hourtype[] = [
 
 const Companiesdata: { imgSrc: string }[] = [
   {
-    imgSrc: '/images/slickCompany/HTML.PNG',
+    imgSrc: '/images/SSSS/7777_20220915081926.jpg',
   },
   {
-    imgSrc: '/images/slickCompany/Css.PNG',
+    imgSrc: '/images/SSSS/betti bachayo beti padayo jbce9_20210920090847_20220203085235.jpg',
   },
   {
-    imgSrc: '/images/slickCompany/Javascript.PNG',
+    imgSrc: '/images/SSSS/digital india_20231001222002.png',
   },
   {
-    imgSrc: '/images/slickCompany/React.PNG',
+    imgSrc: '/images/SSSS/download_20220928221937_20221025212704.png',
   },
   {
-    imgSrc: '/images/slickCompany/Node.PNG',
+    imgSrc: '/images/SSSS/download_20230819224725.jpg',
   },
   {
-    imgSrc: '/images/slickCompany/Next.JPEG',
+    imgSrc: '/images/SSSS/ISO_9001-2015-jbce6_20210920091101_20220203085121_20230819225005.jpg',
   },
   {
-    imgSrc: '/images/slickCompany/Express.JPEG',
+    imgSrc: '/images/SSSS/ISO-9001-2015-Certified-image-710x318-1_20230819224807.png',
   },
   {
-    imgSrc: '/images/slickCompany/Nestjs.JPEG',
+    imgSrc: '/images/SSSS/jaybalajieducation ro logo_20211101090204_20220203085108 (1)_20230819225226.png',
   },
   {
-    imgSrc: '/images/slickCompany/Php.PNG',
+    imgSrc: '/images/SSSS/jbce.in_20220928125700.png',
   },
   {
-    imgSrc: '/images/slickCompany/Laravel.PNG',
+    imgSrc: '/images/SSSS/manab adhikar jbce logo3_20210920090941_20220203085217.jpg',
   },
+  {
+    imgSrc: '/images/SSSS/NATIONAL-DIGITAL-MISSION-jbce_20231001221943.jpg',
+  },
+  //df
+  {
+    imgSrc: '/images/SSSS/swachh-bharat-abhiyan  jbce 5_20210920091019_20220203085200.png',
+  },
+  // {
+  //   imgSrc: '/images/slickCompany/HTML.PNG',
+  // },
+  // {
+  //   imgSrc: '/images/slickCompany/Css.PNG',
+  // },
+  // {
+  //   imgSrc: '/images/slickCompany/Javascript.PNG',
+  // },
+  // {
+  //   imgSrc: '/images/slickCompany/React.PNG',
+  // },
+  // {
+  //   imgSrc: '/images/slickCompany/Node.PNG',
+  // },
+  // {
+  //   imgSrc: '/images/slickCompany/Next.JPEG',
+  // },
+  // {
+  //   imgSrc: '/images/slickCompany/Express.JPEG',
+  // },
+  // {
+  //   imgSrc: '/images/slickCompany/Nestjs.JPEG',
+  // },
+  // {
+  //   imgSrc: '/images/slickCompany/Php.PNG',
+  // },
+  // {
+  //   imgSrc: '/images/slickCompany/Laravel.PNG',
+  // },
 ]
 
 const CourseDetailData: CourseDetailType[] = [

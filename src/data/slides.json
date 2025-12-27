@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "image": "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "title": "TOP FRANCHISE BRAND IN INDIA",
+    "subtitle": "SST COMPUTER & WELL KNOWLEDGE INSTITUTE",
+    "description": "Grab Your Franchise Opportunity. Become a Part Of Our Winning Network and Build your own"
+  },
+  {
+    "id": 2,
+    "image": "https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "title": "PROFESSIONAL TRAINING CENTER",
+    "subtitle": "Learn & Grow With Us",
+    "description": "Industry Expert Training with 100% Placement Support"
+  },
+  {
+    "id": 3,
+    "image": "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "title": "CERTIFIED COURSES",
+    "subtitle": "Get Industry Recognized Certification",
+    "description": "Software Courses, Design Courses, Graphic Design Courses"
+  }
+]

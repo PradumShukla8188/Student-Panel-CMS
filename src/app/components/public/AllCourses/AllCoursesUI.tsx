@@ -8,6 +8,7 @@ import Link from 'next/link'
 import { useRouter ,usePathname} from 'next/navigation'
 
 interface Name {
+  id:number
   imageSrc: string
   course: string
   price: string
@@ -21,7 +22,7 @@ interface Name {
   | 'cloudcomputing'
 }
 
-const NamesList = () => {
+const AllCoursesUI = () => {
   // -------------------------------------------------------------
   const router=useRouter()
   const pathname=usePathname()
@@ -36,7 +37,7 @@ const NamesList = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch('/api/data')
+        const res = await fetch('/api/courseDetails')
         if (!res.ok) throw new Error('Failed to fetch.')
         const data = await res.json()
         setCourseDetail(data.CourseDetailData)
@@ -51,22 +52,21 @@ const NamesList = () => {
   // -------------------------------------------------------------
 
   const [selectedButton, setSelectedButton] = useState<
-    |'basiccomputer'
+  |'basiccomputer'
     | 'mobiledevelopment'
     | 'webdevelopment'
     | 'datascience'
     | 'cloudcomputing'
     | 'all'
     | null
-  >('basiccomputer')
+  >('webdevelopment')
   const basicComputer=courseDetail?.filter(
-    (name)=>name?.category==='basiccomputer'
+    (name)=>name?.category==='basiccomputer')
+  const mobileDevelopment = courseDetail.filter(
+    (name) => name.category === 'mobiledevelopment'
   )
-  const mobileDevelopment = courseDetail?.filter(
-    (name) => name?.category === 'mobiledevelopment'
-  )
-  const webDevelopment = courseDetail?.filter(
-    (name) => name?.category === 'webdevelopment'
+  const webDevelopment = courseDetail.filter(
+    (name) => name.category === 'webdevelopment'
   )
   const dataScience = courseDetail.filter(
     (name) => name.category === 'datascience'
@@ -76,9 +76,7 @@ const NamesList = () => {
   )
 
   let selectedNames: Name[] = []
-  if (selectedButton==='basiccomputer'){
-    selectedNames=basicComputer
-  }
+  
   if (selectedButton === 'mobiledevelopment') {
     selectedNames = mobileDevelopment
   } else if (selectedButton === 'webdevelopment') {
@@ -87,15 +85,17 @@ const NamesList = () => {
     selectedNames = dataScience
   } else if (selectedButton === 'cloudcomputing') {
     selectedNames = cloudComputing
-  }
+  } else if(selectedButton==='basiccomputer'){
+    selectedNames=basicComputer
 
-  const nameElements = selectedNames.map((name, index) => (
+  }
+  const nameElements = selectedNames?.map((name, index) => (
     <div id='Courses' key={index} className='shadow-lg rounded-xl group flex'>
       <div className='py-5 lg:py-0 flex flex-col'>
         <div className='overflow-hidden rounded-lg bg-gray-100'>
           <Image
-            src={name.imageSrc}
-            alt={name.course}
+            src={name?.imageSrc}
+            alt={name?.course}
             width={700}
             height={700}
             className='h-full w-full object-cover object-center group-hover:scale-125 transition duration-300 ease-in-out'
@@ -106,21 +106,21 @@ const NamesList = () => {
             <div className='flex items-center justify-between'>
               <p className='block font-normal text-gray-900'>{name.course}</p>
               <div className='block text-lg font-semibold text-success border-solid border-2 border-success rounded-md px-1'>
-                <p>${name?.price}</p>
+                <p>₹{name?.price}</p>
               </div>
             </div>
             <Link href={'/'}>
               <p
                 aria-hidden='true'
                 className='text-xl font-semibold group-hover:text-primary group-hover:cursor-pointer'>
-                {name.profession}
+                {name?.profession}
               </p>
             </Link>
           </div>
           <div className='flex justify-between border-solid border-2 rounded-md p-2'>
             <p>{name?.duration}</p>
             <div className='flex flex-row space-x-4'>
-              <div className='flex'>
+              {/* <div className='flex'>
                 <Image
                   src={'/images/courses/account.svg'}
                   width={18}
@@ -137,7 +137,8 @@ const NamesList = () => {
                   alt='star'
                 />
                 <p className='ml-1'>4.5</p>
-              </div>
+              </div> */}
+              <Link href={`/all-courses/course-detail/${name?.id}`}>Get Details</Link>
             </div>
           </div>
         </div>
@@ -146,7 +147,7 @@ const NamesList = () => {
   ))
 
   return (
-    <section id='courses-section'>
+    <section id='courses-section' className='mt-5'>
       <div className='container mx-auto max-w-7xl px-4'>
         <div className='flex flex-col sm:flex-row justify-between sm:items-center gap-5 mb-4'>
           <h2 className='font-bold tracking-tight'>{isAllCourseRoute?"All Course":"Popular Courses"}</h2>
@@ -158,6 +159,17 @@ const NamesList = () => {
         </div>
         <div className='flex nowhitespace space-x-5 rounded-xl bg-white p-1 overflow-x-auto mb-4'>
           {/* FOR DESKTOP VIEW */}
+          <button
+            onClick={() => setSelectedButton('basiccomputer')}
+            className={
+              'bg-white' +
+              (selectedButton === 'basiccomputer'
+                ? 'text-black border-b-2 border-yellow-200'
+                : 'text-black/40') +
+              ' pb-2 text-lg hidden sm:block hover:cursor-pointer'
+            }>
+            Basic Computer
+          </button>
           <button
             onClick={() => setSelectedButton('webdevelopment')}
             className={
@@ -204,6 +216,16 @@ const NamesList = () => {
           </button>
 
           {/* FOR MOBILE VIEW */}
+          <Icon
+            icon='solar:global-line-duotone'
+            onClick={() => setSelectedButton('basiccomputer')}
+            className={
+              'text-5xl sm:hidden block ' +
+              (selectedButton === 'basiccomputer'
+                ? 'border-b-2 border-yellow-200'
+                : 'text-gray-400')
+            }
+          />
           <Icon
             icon='solar:global-line-duotone'
             onClick={() => setSelectedButton('webdevelopment')}
@@ -266,4 +288,4 @@ const NamesList = () => {
   )
 }
 
-export default NamesList
+export default AllCoursesUI

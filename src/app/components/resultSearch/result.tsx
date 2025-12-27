@@ -103,11 +103,6 @@ export default function Home() {
                         </div>
                     </Card>
                 </div>
-
-                <footer className="text-center mt-16 text-gray-600 text-sm">
-                    <p>© 2024 Pratagdas Temar Computer Education Pvt. Ltd.</p>
-                    <p className="mt-2">All Rights Reserved | ISO 9001:2015 Certified</p>
-                </footer>
             </div>
         </div>
     );
