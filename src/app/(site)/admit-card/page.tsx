@@ -1,21 +1,20 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { useState } from "react"
-import { useRef } from "react"
-import html2canvas from "html2canvas"
-import jsPDF from "jspdf"
-
+import Image from "next/image";
+import { useState } from "react";
+import { useRef } from "react";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
 type AdmitCard = {
-  rollNumber: string
-  name: string
-  course: string
-  examDate: string
-  examTime: string
-  center: string
-  photo: string
-}
+  rollNumber: string;
+  name: string;
+  course: string;
+  examDate: string;
+  examTime: string;
+  center: string;
+  photo: string;
+};
 
 const admitCardData: AdmitCard[] = [
   {
@@ -24,8 +23,8 @@ const admitCardData: AdmitCard[] = [
     course: "ADCA",
     examDate: "25 March 2026",
     examTime: "10:00 AM - 1:00 PM",
-    center: "SST Computer Institute, Main Campus",
-    photo: "/images/student-photo.jpg"
+    center: "SST COMPUTER & WELL KNOWLEDGE INSTITUTE, Main Campus",
+    photo: "/images/student-photo.jpg",
   },
   {
     rollNumber: "27",
@@ -33,8 +32,8 @@ const admitCardData: AdmitCard[] = [
     course: "O Level",
     examDate: "27 March 2026",
     examTime: "10:00 AM - 1:00 PM",
-    center: "SST Computer Institute, Main Campus",
-    photo: "/images/student-photo.jpg"
+    center: "SST COMPUTER & WELL KNOWLEDGE INSTITUTE, Main Campus",
+    photo: "/images/student-photo.jpg",
   },
   {
     rollNumber: "28",
@@ -43,36 +42,33 @@ const admitCardData: AdmitCard[] = [
     examDate: "29 March 2026",
     examTime: "10:00 AM - 1:00 PM",
     center: "SST Computer Institute, Main Campus",
-    photo: "/images/student-photo.jpg"
-  }
-]
+    photo: "/images/student-photo.jpg",
+  },
+];
 
 export default function AdmitCardPage() {
-  const cardRef = useRef<HTMLDivElement | null>(null)
+  const cardRef = useRef<HTMLDivElement | null>(null);
 
-  const [roll, setRoll] = useState("")
-  const [card, setCard] = useState<AdmitCard | null>(null)
-  const [error, setError] = useState("")
+  const [roll, setRoll] = useState("");
+  const [card, setCard] = useState<AdmitCard | null>(null);
+  const [error, setError] = useState("");
 
   const handleSearch = () => {
-    const found = admitCardData.find(
-      item => item.rollNumber === roll
-    )
+    const found = admitCardData.find((item) => item.rollNumber === roll);
 
     if (!found) {
-      setError("Admit Card not found")
-      setCard(null)
-      return
+      setError("Admit Card not found");
+      setCard(null);
+      return;
     }
 
-    setError("")
-    setCard(found)
-  }
+    setError("");
+    setCard(found);
+  };
 
   const handlePrint = () => {
-    window.print()
-  }
-
+    window.print();
+  };
 
   const handleDownload = async () => {
     if (!cardRef.current) return;
@@ -116,7 +112,6 @@ export default function AdmitCardPage() {
   return (
     <div className="min-h-screen bg-gray-100 flex justify-center p-4">
       <div className="w-full max-w-3xl">
-
         {/* Search */}
         <div className="bg-white p-4 rounded shadow mb-6 print:hidden">
           <h2 className="text-xl font-bold text-center mb-3">
@@ -133,17 +128,13 @@ export default function AdmitCardPage() {
             />
             <button
               onClick={handleSearch}
-              className="bg-amber-900 text-white px-6 rounded hover:bg-amber-900"
+              className="bg-amber-900 text-white px-6 rounded hover:bg-amber-900 cursor-pointer"
             >
               Search
             </button>
           </div>
 
-          {error && (
-            <p className="text-red-600 text-center mt-2">
-              {error}
-            </p>
-          )}
+          {error && <p className="text-red-600 text-center mt-2">{error}</p>}
         </div>
 
         {/* ADMIT CARD */}
@@ -163,16 +154,17 @@ export default function AdmitCardPage() {
             >
               {/* Header */}
 
-
               <div
                 style={{
+                  position: "relative",
                   textAlign: "center",
                   paddingBottom: "10px",
                   borderBottom: "2px solid #92400e",
                   marginBottom: "15px",
                 }}
               >
-                <div className="top-header-wrapper">
+                {/* Logo (Left) */}
+                <div style={{ position: "absolute", left: 0, top: 0 }}>
                   <Image
                     src="/images/logo/SST-logo.png"
                     alt="logo"
@@ -180,76 +172,119 @@ export default function AdmitCardPage() {
                     height={50}
                     quality={100}
                   />
-                  <div>
-                    <h1 style={{ fontSize: "22px", fontWeight: "700", margin: 0 }}>
-                      SST Computer Institute
-                    </h1>
-                    <p style={{ fontSize: "12px", margin: "2px 0" }}>
-                      Authorised Computer Training Centre
-                    </p>
-                  </div>
                 </div>
-                <h2 style={{ fontSize: "16px", fontWeight: "600", margin: "5px 0" }}>
-                  ADMIT CARD
-                </h2>
+
+                {/* Center Heading */}
+                <div>
+                  <h1
+                    style={{ fontSize: "22px", fontWeight: "700", margin: 0 }}
+                  >
+                    SST COMPUTER & WELL KNOWLEDGE INSTITUTE
+                  </h1>
+                  <p style={{ fontSize: "12px", margin: "2px 0" }}>
+                    Authorised Computer Training Centre
+                  </p>
+                  <h2
+                    style={{
+                      fontSize: "16px",
+                      fontWeight: "600",
+                      margin: "5px 0",
+                    }}
+                  >
+                    ADMIT CARD
+                  </h2>
+                </div>
               </div>
 
-
-
               {/* Student Info + Photo */}
-              <div >
-                <div >
+              <div>
+                <div>
                   <table className="outer-table">
                     <tr>
                       <td>
                         <table className="inner-table">
                           <tbody className="table-body">
                             <tr>
-                              <td style={{ fontWeight: "600" }}>Name of Candidate</td>
-                              <td >{card.name}</td>
+                              <td style={{ fontWeight: "600" }}>
+                                Name of Candidate
+                              </td>
+                              <td>{card.name}</td>
                             </tr>
                             <tr>
-                              <td style={{ fontWeight: "600", padding: "4px" }}>Roll Number</td>
-                              <td style={{ padding: "4px" }}>{card.rollNumber}</td>
+                              <td style={{ fontWeight: "600", padding: "4px" }}>
+                                Roll Number
+                              </td>
+                              <td style={{ padding: "4px" }}>
+                                {card.rollNumber}
+                              </td>
                             </tr>
                             <tr>
-                              <td style={{ fontWeight: "600", padding: "4px" }}>Course</td>
+                              <td style={{ fontWeight: "600", padding: "4px" }}>
+                                Course
+                              </td>
                               <td style={{ padding: "4px" }}>{card.course}</td>
                             </tr>
                             <tr>
-                              <td style={{ fontWeight: "600", padding: "4px" }}>Exam Date</td>
-                              <td style={{ padding: "4px" }}>{card.examDate}</td>
+                              <td style={{ fontWeight: "600", padding: "4px" }}>
+                                Exam Date
+                              </td>
+                              <td style={{ padding: "4px" }}>
+                                {card.examDate}
+                              </td>
                             </tr>
                             <tr>
-                              <td style={{ fontWeight: "600", padding: "4px" }}>Exam Time</td>
-                              <td style={{ padding: "4px" }}>{card.examTime}</td>
+                              <td style={{ fontWeight: "600", padding: "4px" }}>
+                                Exam Time
+                              </td>
+                              <td style={{ padding: "4px" }}>
+                                {card.examTime}
+                              </td>
                             </tr>
                             <tr>
-                              <td style={{ fontWeight: "600", padding: "4px" }}>Exam Centre</td>
+                              <td style={{ fontWeight: "600", padding: "4px" }}>
+                                Exam Centre
+                              </td>
                               <td style={{ padding: "4px" }}>{card.center}</td>
                             </tr>
                           </tbody>
                         </table>
                       </td>
                       <td>
-                        <div style={{ flex: 1, display: "flex", justifyContent: "center" }}>
+                        <div
+                          style={{
+                            flex: 1,
+                            display: "flex",
+                            justifyContent: "center",
+                          }}
+                        >
                           <img
                             src="/images/authorised/student.png"
                             alt="Student photo"
-                            style={{ width: "128px", height: "160px", border: "2px solid #000", objectFit: "cover" }}
+                            style={{
+                              width: "128px",
+                              height: "160px",
+                              border: "2px solid #000",
+                              objectFit: "cover",
+                            }}
                           />
                         </div>
                       </td>
                     </tr>
                   </table>
                 </div>
-
-
               </div>
 
               {/* Instructions */}
-              <div style={{ fontSize: "12px", borderTop: "1px solid #92400e", paddingTop: "6px" }}>
-                <p style={{ fontWeight: "600" }}>Instructions for the Candidate:</p>
+              <div
+                style={{
+                  fontSize: "12px",
+                  borderTop: "1px solid #92400e",
+                  paddingTop: "6px",
+                }}
+              >
+                <p style={{ fontWeight: "600" }}>
+                  Instructions for the Candidate:
+                </p>
                 <ul style={{ paddingLeft: "20px" }}>
                   <li>Admit card is mandatory for entry.</li>
                   <li>Bring a valid ID proof.</li>
@@ -258,47 +293,72 @@ export default function AdmitCardPage() {
               </div>
 
               {/* Signatures */}
-              <div style={{ display: "flex", justifyContent: "space-between", marginTop: "30px", alignItems: "flex-end" }}>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  marginTop: "30px",
+                  alignItems: "flex-end",
+                }}
+              >
                 <div style={{ textAlign: "center" }}>
-                  <p style={{ borderTop: "1px solid #000", width: "150px", margin: "0 auto", paddingTop: "4px" }}>
+                  <p
+                    style={{
+                      borderTop: "1px solid #000",
+                      width: "150px",
+                      margin: "0 auto",
+                      paddingTop: "4px",
+                    }}
+                  >
                     Student Signature
                   </p>
                 </div>
 
                 <div style={{ textAlign: "center" }}>
                   <img
-                    src="/images/authorised/signature.png"
+                    src="/images/authorised/d-sign.png"
                     alt="Director Signature"
                     style={{ height: "50px", marginBottom: "4px" }}
                   />
-                  <p style={{ borderTop: "1px solid #000", width: "180px", margin: "0 auto", paddingTop: "4px", fontSize: "12px" }}>
-                    Authorized Signatory<br />Director
+                  <p
+                    style={{
+                      borderTop: "1px solid #000",
+                      width: "180px",
+                      margin: "0 auto",
+                      paddingTop: "4px",
+                      fontSize: "12px",
+                    }}
+                  >
+                    Authorized Signatory
+                    <br />
+                    Director
                   </p>
                 </div>
               </div>
             </div>
 
-
             {/* Footer Buttons */}
-            <div className="mt-6 flex gap-4 print:hidden" style={{ marginTop: "20px" }}>
+            <div
+              className="mt-6 flex gap-4 print:hidden"
+              style={{ marginTop: "20px" }}
+            >
               <button
                 onClick={handleDownload}
-                className="flex-1 bg-green-700 text-white py-2 rounded hover:bg-green-800"
+                className="flex-1 bg-green-700 text-white py-2 rounded hover:bg-green-800 cursor-pointer"
               >
                 Download PDF
               </button>
 
               <button
                 onClick={handlePrint}
-                className="flex-1 bg-gray-700 text-white py-2 rounded hover:bg-gray-800"
+                className="flex-1 bg-gray-700 text-white py-2 rounded hover:bg-gray-800 cursor-pointer"
               >
                 Print Admit Card
               </button>
             </div>
           </>
         )}
-
       </div>
     </div>
-  )
+  );
 }

@@ -56,11 +56,11 @@ export function Certificate({ student }: CertificateProps) {
             <div className='logo-sst' >   <Logo /> </div>
             <div>
               <h1 className="text-xl font-bold text-amber-900 leading-tight">
-                SST COMPUTER INSTITUTE
+                SST COMPUTER & WELL KNOWLEDGE INSTITUTE
               </h1>
-              <h2 className="text-lg font-bold text-amber-800">
+              {/* <h2 className="text-lg font-bold text-amber-800">
                 EDUCATION PVT.LTD.
-              </h2>
+              </h2> */}
               <p className="text-xs text-gray-600 mt-1">
                 Regd. Office: Main Road, Education Hub, India
               </p>

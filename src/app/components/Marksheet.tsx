@@ -60,14 +60,14 @@ export function Marksheet({ student }: MarksheetProps) {
               {/* <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center">
                 <GraduationCap className="w-10 h-10 text-white" />
               </div> */}
-              <div className='logo-sst' >   <Logo /> </div>
+              <div className='logo-sst'><Logo /> </div>
               <div>
                 <h1 className="text-2xl font-bold text-blue-900 leading-tight">
-                  SST COMPUTER INSTITUTE
+                 SST COMPUTER & WELL KNOWLEDGE INSTITUTE
                 </h1>
-                <h2 className="text-xl font-bold text-blue-800">
+                {/* <h2 className="text-xl font-bold text-blue-800">
                   EDUCATION PVT.LTD.
-                </h2>
+                </h2> */}
                 <p className="text-xs text-gray-600 mt-1">
                   Affiliated to National Education Board | ISO 9001:2025 Certified
                 </p>

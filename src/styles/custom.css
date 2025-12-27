@@ -56,15 +56,11 @@
     display: flex;
 }
 
-.table-body {
-    
-}
-
 table {
     border-collapse: separate; /* or collapse */
     border-spacing: 1px; /* space between cells */
 }
 
-.table-body td {
+/* .table-body td {
     background-color: rgb(231, 226, 236);
-}
+} */

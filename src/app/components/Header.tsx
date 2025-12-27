@@ -11,42 +11,47 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
       {/* Top Bar */}
-      <div className="bg-gradient from-amber-600 via-amber-500 to-amber-700 text-white">
-        <div className="container mx-auto px-4 py-2 flex justify-between items-center text-xs sm:text-sm">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:gap-6 gap-1">
-            <div className="flex items-center gap-2">
-              <Mail className="h-4 w-4" />
-              <span className="whitespace-nowrap">
-                EMAIL: SSTCOMPUTER@GMAIL.COM
-              </span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Phone className="h-4 w-4" />
-              <span className="whitespace-nowrap">
-                CALL: 9519222486, 7376486686
-              </span>
-            </div>
-          </div>
-
-          <div className="hidden sm:flex items-center gap-4">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="text-white hover:bg-amber-700"
-            >
-              <UserCog className="h-4 w-4 mr-2" />
-              CENTER ADMIN
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="text-white hover:bg-amber-700"
-            >
-              ADMIN LOGIN
-            </Button>
-          </div>
-        </div>
+     <div className="w-full bg-gradient-to-r from-amber-600 via-amber-500 to-amber-700 text-white">
+  <div className="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center text-xs sm:text-sm">
+    
+    <div className="flex flex-col sm:flex-row sm:items-center sm:gap-6 gap-1">
+      <div className="flex items-center gap-2">
+        <Mail className="h-4 w-4" />
+        <span className="whitespace-nowrap">
+          EMAIL: SSTCOMPUTER115@GMAIL.COM
+        </span>
       </div>
+
+      <div className="flex items-center gap-2">
+        <Phone className="h-4 w-4" />
+        <span className="whitespace-nowrap">
+          CALL: 9519222486, 7376486686
+        </span>
+      </div>
+    </div>
+
+    <div className="hidden sm:flex items-center gap-4">
+      <Button
+        variant="ghost"
+        size="sm"
+        className="text-white hover:bg-amber-700"
+      >
+        <UserCog className="h-4 w-4 mr-2" />
+        CENTER ADMIN
+      </Button>
+
+      <Button
+        variant="ghost"
+        size="sm"
+        className="text-white hover:bg-amber-700"
+      >
+        ADMIN LOGIN
+      </Button>
+    </div>
+
+  </div>
+</div>
+      
 
       {/* Navbar */}
       <nav className="bg-white border-b">
@@ -65,17 +70,6 @@ export default function Header() {
                 <Link href="/all-courses" className="hover:text-amber-600 transition-colors">
                   COURSES
                 </Link>
-
-                {/* Dropdown */}
-                {/* <div className="absolute left-0 mt-2 bg-white shadow-md rounded-lg w-48 opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all duration-200">
-                  <ul className="py-2 text-sm">
-                    <li><Link href="/courses/hardware" className="block px-4 py-2 hover:bg-amber-50">Hardware Courses</Link></li>
-                    <li><Link href="/courses/software" className="block px-4 py-2 hover:bg-amber-50">Software Courses</Link></li>
-                    <li><Link href="/courses/online" className="block px-4 py-2 hover:bg-amber-50">Online Courses</Link></li>
-                    <li><Link href="/courses/english" className="block px-4 py-2 hover:bg-amber-50">Spoken English</Link></li>
-                    <li><Link href="/courses/account" className="block px-4 py-2 hover:bg-amber-50">Accounting</Link></li>
-                  </ul>
-                </div> */}
               </li>
 
               {/* DOWNLOAD DROPDOWN */}

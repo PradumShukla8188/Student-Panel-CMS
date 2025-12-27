@@ -1,5 +1,3 @@
-
-
 import { CourseDetailData } from "../../../../../data/course-data";
 import { notFound } from "next/navigation"
 
@@ -8,8 +6,6 @@ type Props = {
     id: string
   }>
 }
-
-
 
 const CourseDetailPage = async ({ params }: Props) => {
   const { id } = await params

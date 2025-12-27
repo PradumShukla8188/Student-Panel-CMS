@@ -4,7 +4,7 @@ export const CourseDetailData: CourseDetailType[] = [
     {
         id: 1,
         course: 'ADCA',
-        imageSrc: '/images/courses/coursesOne.svg',
+        imageSrc: '/images/courses/adca-2.png',
         profession: 'Advanced Diploma in Computer Applications',
         price: '3200',
         category: 'basiccomputer',
@@ -13,7 +13,7 @@ export const CourseDetailData: CourseDetailType[] = [
     {
         id: 2,
         course: 'DCA',
-        imageSrc: '/images/courses/coursesOne.svg',
+        imageSrc: '/images/courses/DCA.jfif',
         profession: 'Diploma in Computer Applications',
         price: '2600',
         category: 'basiccomputer',
@@ -22,7 +22,7 @@ export const CourseDetailData: CourseDetailType[] = [
     {
         id: 3,
         course: 'Basic Computer',
-        imageSrc: '/images/courses/coursesOne.svg',
+        imageSrc: '/images/courses/basic-c-s.jfif',
         profession: 'Basic Computer Skills Training',
         price: '1200',
         category: 'basiccomputer',
@@ -31,7 +31,7 @@ export const CourseDetailData: CourseDetailType[] = [
     {
         id: 4,
         course: 'Photoshop',
-        imageSrc: '/images/courses/coursesOne.svg',
+        imageSrc: '/images/courses/a-photo.png',
         profession: 'Graphic Design with Adobe Photoshop',
         price: '2200',
         category: 'basiccomputer',
@@ -40,7 +40,7 @@ export const CourseDetailData: CourseDetailType[] = [
     {
         id: 5,
         course: 'Corel Draw',
-        imageSrc: '/images/courses/coursesOne.svg',
+        imageSrc: '/images/courses/corel-draw.png',
         profession: 'Vector Graphic Design using Corel Draw',
         price: '2200',
         category: 'basiccomputer',
@@ -48,8 +48,8 @@ export const CourseDetailData: CourseDetailType[] = [
     },
     {
         id: 6,
-        course: 'Fundamental Programme',
-        imageSrc: '/images/courses/coursesOne.svg',
+        course: 'Computer Fundamental',
+        imageSrc: '/images/courses/computer-fundamental.jfif',
         profession: 'Computer Fundamentals Training',
         price: '800',
         category: 'basiccomputer',
@@ -58,7 +58,7 @@ export const CourseDetailData: CourseDetailType[] = [
     {
         id: 7,
         course: 'HTML',
-        imageSrc: '/images/courses/coursesOne.svg',
+        imageSrc: '/images/courses/html-2.jfif',
         profession: 'HTML Web Development',
         price: '1500',
         category: 'basiccomputer',
@@ -67,7 +67,7 @@ export const CourseDetailData: CourseDetailType[] = [
     {
         id: 8,
         course: 'DHTML',
-        imageSrc: '/images/courses/coursesOne.svg',
+        imageSrc: '/images/courses/d-html-1.jfif',
         profession: 'Dynamic HTML Web Development',
         price: '1800',
         category: 'basiccomputer',
@@ -76,7 +76,7 @@ export const CourseDetailData: CourseDetailType[] = [
     {
         id: 9,
         course: 'Basic Computer Hardware',
-        imageSrc: '/images/courses/coursesOne.svg',
+        imageSrc: '/images/courses/computer-network.png',
         profession: 'Computer Hardware & Maintenance',
         price: '2400',
         category: 'basiccomputer',
@@ -85,7 +85,7 @@ export const CourseDetailData: CourseDetailType[] = [
     {
         id: 10,
         course: 'Tally ERP',
-        imageSrc: '/images/courses/coursesOne.svg',
+        imageSrc: '/images/courses/tally-erp.jfif',
         profession: 'Accounting with Tally ERP',
         price: '2500',
         category: 'basiccomputer',
@@ -94,7 +94,7 @@ export const CourseDetailData: CourseDetailType[] = [
     {
         id: 11,
         course: 'Excel',
-        imageSrc: '/images/courses/coursesOne.svg',
+        imageSrc: '/images/courses/a-excel.png',
         profession: 'Microsoft Excel Professional Training',
         price: '1400',
         category: 'basiccomputer',
@@ -103,7 +103,7 @@ export const CourseDetailData: CourseDetailType[] = [
     {
         id: 12,
         course: 'Hindi Typing',
-        imageSrc: '/images/courses/coursesOne.svg',
+        imageSrc: '/images/courses/hindi-typing.jfif',
         profession: 'Hindi Typing Skills',
         price: '900',
         category: 'basiccomputer',
@@ -112,7 +112,7 @@ export const CourseDetailData: CourseDetailType[] = [
     {
         id: 13,
         course: 'English Typing',
-        imageSrc: '/images/courses/coursesOne.svg',
+        imageSrc: '/images/courses/english-typing.jfif',
         profession: 'English Typing Skills',
         price: '900',
         category: 'basiccomputer',
@@ -121,7 +121,7 @@ export const CourseDetailData: CourseDetailType[] = [
     {
         id: 14,
         course: 'DTP',
-        imageSrc: '/images/courses/coursesOne.svg',
+        imageSrc: '/images/courses/dtp-3.png',
         profession: 'Desktop Publishing Professional',
         price: '2400',
         category: 'basiccomputer',
@@ -129,8 +129,8 @@ export const CourseDetailData: CourseDetailType[] = [
     },
     {
         id: 15,
-        course: 'MS Office (Short Term)',
-        imageSrc: '/images/courses/coursesOne.svg',
+        course: 'MS Office',
+        imageSrc: '/images/courses/ms-of.png',
         profession: 'Microsoft Office Productivity Training',
         price: '1200',
         category: 'basiccomputer',
@@ -138,8 +138,8 @@ export const CourseDetailData: CourseDetailType[] = [
     },
     {
         id: 16,
-        course: 'Tally Basic',
-        imageSrc: '/images/courses/coursesOne.svg',
+        course: 'Tally Prime',
+        imageSrc: '/images/courses/t-prime.jfif',
         profession: 'Basic Accounting with Tally',
         price: '1800',
         category: 'basiccomputer',
@@ -166,7 +166,7 @@ export const CourseDetailData: CourseDetailType[] = [
     {
         id: 19,
         course: 'MDCA',
-        imageSrc: '/images/courses/coursesOne.svg',
+        imageSrc: '/images/courses/mdca.jfif',
         profession: 'Master Diploma in Computer Applications',
         price: '3600',
         category: 'basiccomputer',
@@ -175,7 +175,7 @@ export const CourseDetailData: CourseDetailType[] = [
     {
         id: 20,
         course: 'Personality Development',
-        imageSrc: '/images/courses/coursesOne.svg',
+        imageSrc: '/images/courses/p-dev2.jfif',
         profession: 'Personality & Soft Skills Development',
         price: '1500',
         category: 'basiccomputer',
@@ -184,7 +184,7 @@ export const CourseDetailData: CourseDetailType[] = [
     {
         id: 21,
         course: 'English Speaking',
-        imageSrc: '/images/courses/coursesOne.svg',
+        imageSrc: '/images/courses/sp-en.jfif',
         profession: 'Spoken English & Communication Skills',
         price: '2000',
         category: 'basiccomputer',
@@ -193,7 +193,7 @@ export const CourseDetailData: CourseDetailType[] = [
     {
         id: 22,
         course: 'APDCA',
-        imageSrc: '/images/courses/coursesOne.svg',
+        imageSrc: '/images/courses/apdca.jfif',
         profession: 'Advanced Professional Diploma in Computer Applications',
         price: '3500',
         category: 'basiccomputer',
@@ -202,7 +202,7 @@ export const CourseDetailData: CourseDetailType[] = [
     {
         id: 23,
         course: 'CCC',
-        imageSrc: '/images/courses/coursesOne.svg',
+        imageSrc: '/images/courses/ccc.png',
         profession: 'Course on Computer Concepts (CCC)',
         price: '1800',
         category: 'basiccomputer',
@@ -211,7 +211,7 @@ export const CourseDetailData: CourseDetailType[] = [
     {
         id: 24,
         course: 'B-Level',
-        imageSrc: '/images/courses/coursesOne.svg',
+        imageSrc: '/images/courses/b-level.png',
         profession: 'Advanced Computer Programming (B-Level)',
         price: '3600',
         category: 'basiccomputer',
@@ -220,7 +220,7 @@ export const CourseDetailData: CourseDetailType[] = [
     {
         id: 25,
         course: 'CFA',
-        imageSrc: '/images/courses/coursesOne.svg',
+        imageSrc: '/images/courses/cfa.jfif',
         profession: 'Computer Financial Accounting',
         price: '2200',
         category: 'basiccomputer',

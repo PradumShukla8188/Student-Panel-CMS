@@ -1,19 +1,11 @@
-import React from 'react'
-import Hero from '@/app/components/Home/Hero'
-import Companies from '@/app/components/Home/Companies'
-import NamesList from '@/app/components/Home/Courses'
-import Mentor from '@/app/components/Home/Mentor'
-import Testimonial from '@/app/components/Home/Testimonial'
-import Newsletter from '@/app/components/Home/Newsletter'
 import { Metadata } from 'next'
-import ContactForm from './components/Contact/Form'
 import NoticeBoard from './components/NoticeBoard'
 import ActionButtons from './components/ActionButtons'
 import StudentShowcase from './components/StudentShowcase'
 import { BookOpen } from 'lucide-react'
 import HeroSlider from './components/HeroSlider'
 import AboutDeveloper from './components/public/AboutDeveloper/AboutDeveloper'
-// import Header from './components/Header'
+import Marquee from './components/marquee'
 export const metadata: Metadata = {
   title: 'SSTCI',
 }
@@ -21,17 +13,14 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main>
-      {/* <Hero />
-      <Companies />
-      <NamesList />
-      <Mentor />
-      <Testimonial />
-      <ContactForm />
-      <Newsletter /> */}
       <div className="min-h-screen bg-gray-50">
-        {/* <Header /> */}
-
         <HeroSlider />
+        <Marquee
+      text="Welcome To SST COMPUTER & WELL KNOWLEDGE INSTITUTE. An ISO 9001 : 2015 Certified Institute, Most Demanding Computer Educational Organization, Established Under Ministry of Corporate Affairs, Govt. of India, The Best Institute of Information Technology Education & Development."
+      speed={30}
+      direction="left"
+    />
+        
 
         <main className="container mx-auto px-4 py-12">
           <section className="text-center mb-16">
@@ -92,7 +81,6 @@ export default function Home() {
 
           </div>
           <div>
-
             <AboutDeveloper />
           </div>
         </main>
