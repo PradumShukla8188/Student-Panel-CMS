@@ -64,7 +64,7 @@ export default function Header() {
             {/* Desktop Menu */}
             <ul className="hidden lg:flex items-center gap-8 text-sm font-semibold">
               <li><Link href="/" className="hover:text-amber-600 transition-colors">HOME</Link></li>
-              <li><Link href="/about" className="hover:text-amber-600 transition-colors">ABOUT</Link></li>
+              <li><Link href="/about-us" className="hover:text-amber-600 transition-colors">ABOUT</Link></li>
               {/* COURSES DROPDOWN */}
               <li className="relative group">
                 <Link href="/all-courses" className="hover:text-amber-600 transition-colors">
