@@ -88,7 +88,23 @@ export default function Header() {
                 </div>
               </li>
               <li><Link href="/gallery" className="hover:text-amber-600 transition-colors">GALLERY</Link></li>
-              <li><Link href="/student" className="hover:text-amber-600 transition-colors">STUDENT</Link></li>
+              <li  className="relative group"><button className="hover:text-amber-600 transition-colors">STUDENT</button>
+               <div className="absolute left-0 mt-2 bg-white shadow-md rounded-lg w-48 opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all duration-200">
+                  <ul className="py-2 text-sm">
+                    <li><Link href="/admission/online-admission" className="block px-4 py-2 hover:bg-amber-50">Online Admission</Link></li>
+                    <li><Link href="/download/student-result" className="block px-4 py-2 hover:bg-amber-50">Student Enquiry</Link></li>
+                    <li><Link href="/download/forms" className="block px-4 py-2 hover:bg-amber-50">Registration Process</Link></li>
+                    <li><Link href="/student/student-verify" className="block px-4 py-2 hover:bg-amber-50">Student Verify</Link></li>
+                    <li><Link href="/student/student-login" className="block px-4 py-2 hover:bg-amber-50">Student Login</Link></li>
+
+                    <li><Link href="/admit-card" className="block px-4 py-2 hover:bg-amber-50">Download Admit Card</Link></li>
+                    <li><Link href="/student/student-result-verify" className="block px-4 py-2 hover:bg-amber-50">Student Result Verify</Link></li>
+                    <li><Link href="/download/prospectus" className="block px-4 py-2 hover:bg-amber-50">Marksheet & Certificate Verify</Link></li>
+                    <li><Link href="/download/prospectus" className="block px-4 py-2 hover:bg-amber-50">Training & Placement</Link></li>
+                    <li><Link href="/download/prospectus" className="block px-4 py-2 hover:bg-amber-50">Apply For Job</Link></li>
+                  </ul>
+                </div>
+              </li>
               <li><Link href="/franchise" className="hover:text-amber-600 transition-colors">FRANCHISE</Link></li>
               <li><Link href="/staff-login" className="hover:text-amber-600 transition-colors">STAFF LOGIN</Link></li>
               <li><Link href="/contact" className="hover:text-amber-600 transition-colors">CONTACT</Link></li>
