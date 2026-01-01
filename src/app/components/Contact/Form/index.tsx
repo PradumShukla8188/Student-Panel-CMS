@@ -1,246 +1,141 @@
-'use client'
-import React from 'react'
-import { useState, useEffect } from 'react'
-import { useForm, SubmitHandler, Controller } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { contactFormValues, ContactFormSchema } from '@/lib/formSchema';
-import dynamic from 'next/dynamic';
-const Select = dynamic(() => import("react-select"), {
-  ssr: false,
-});
+"use client";
 
-type OptionType = {
-  value: string;
-  label: string;
+import { useForm } from "react-hook-form";
+
+type ContactFormData = {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
 };
-const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    firstname: '',
-    lastname: '',
-    email: '',
-    phnumber: '',
-    Message: '',
-  })
-  const [submitted, setSubmitted] = useState(false)
-  const [showThanks, setShowThanks] = useState(false)
-  const [loader, setLoader] = useState(false)
-  const [isFormValid, setIsFormValid] = useState(false)
-  const [courseOptions, setCourseOptions] = useState<OptionType[]>([
-    { label: "HTML", value: "1" },
-    { label: "CSS", value: "2" },
-    { label: "JAVASCRIPT", value: "3" },
-    { label: "REACT", value: "4" },
-    { label: "NEXT", value: "5" }
-  ])
 
-  const { register, handleSubmit, formState: { errors, isDirty }, watch, control } = useForm<contactFormValues>({
-    mode: "onBlur",
-    resolver: yupResolver(ContactFormSchema) as any
-  })
+export default function ContactUs() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm<ContactFormData>();
 
-  // useEffect(() => {
-  //   const isValid = Object.values(formData).every(
-  //     (value) => value.trim() !== ''
-  //   )
-  //   setIsFormValid(isValid)
-  // }, [formData])
-  // const handleChange = (e: any) => {
-  //   const { name, value } = e.target
-  //   setFormData((prevData) => ({
-  //     ...prevData,
-  //     [name]: value,
-  //   }))
-  // }
-  // const reset = () => {
-  //   formData.firstname = ''
-  //   formData.lastname = ''
-  //   formData.email = ''
-  //   formData.phnumber = ''
-  //   formData.Message = ''
-  // }
-  // const handleSubmit = async (e: any) => {
-  //   e.preventDefault()
-  //   setLoader(true)
+  const onSubmit = async (data: ContactFormData) => {
+    console.log("Form Data:", data);
 
-  //   fetch('https://formsubmit.co/ajax/bhainirav772@gmail.com', {
-  //     method: 'POST',
-  //     headers: { 'Content-type': 'application/json' },
-  //     body: JSON.stringify({
-  //       Name: formData.firstname,
-  //       LastName: formData.lastname,
-  //       Email: formData.email,
-  //       PhoneNo: formData.phnumber,
-  //       Message: formData.Message,
-  //     }),
-  //   })
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       if (data.success) {
-  //         setSubmitted(true)
-  //         setShowThanks(true)
-  //         reset()
-
-  //         setTimeout(() => {
-  //           setShowThanks(false)
-  //         }, 5000)
-  //       }
-
-  //       reset()
-  //     })
-  //     .catch((error) => {
-  //       setLoader(false)
-  //       console.log(error.message)
-  //     })
-  // }
-
-  const onSubmit: SubmitHandler<contactFormValues> = (data: any) => {
-    console.log("data--->", data)
-
-  }
-
-  const handleChange = (selectedOption: any, field: any) => {
-    field.onChange(selectedOption ? selectedOption?.value : "");
+    alert("Message sent successfully!");
+    reset();
   };
 
-  console.log("errors---->", errors)
   return (
-    <section id='contact'>
-      <div className='container'>
-        <div className='relative'>
-          <h2 className='mb-9 font-bold tracking-tight'>Get in Touch</h2>
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className='flex flex-wrap w-full m-auto justify-between'>
-            <div className='sm:flex gap-3 w-full'>
-              <div className='mx-0 my-2.5 flex-1'>
-                <label htmlFor='fname' className='pb-3 inline-block text-base'>
-                  First Name
-                </label>
-                <input
-                  id='fname'
-                  type='text'
-                  // name='firstname'
-                  // value={formData.firstname}
-                  // onChange={handleChange}
-                  placeholder='John'
-                  className='w-full text-base px-4 rounded-2xl py-2.5 border-solid border transition-all duration-500 focus:border-primary focus:outline-0'
-                  {...register("firstname")}
-                />
-                {errors?.firstname ? <p className='error'>{errors?.firstname?.message}</p> : null}
-              </div>
+    <section className="w-full max-w-6xl mx-auto px-4 py-12">
+      <h1 className="text-3xl font-bold text-center mb-8">Contact Us</h1>
 
-              <div className='mx-0 my-2.5 flex-1'>
-                <label htmlFor='lname' className='pb-3 inline-block text-base'>
-                  Last Name
-                </label>
-                <input
-                  id='lname'
-                  type='text'
-                  // name='lastname'
-                  // value={formData.lastname}
-                  // onChange={handleChange}
-                  placeholder='Doe'
-                  className='w-full text-base px-4 rounded-2xl py-2.5 border-solid border transition-all duration-500 focus:border-primary focus:outline-0'
-                  {...register("lastname")}
-                />
-              </div>
-            </div>
-            <div className='sm:flex gap-3 w-full'>
-              <div className='mx-0 my-2.5 flex-1'>
-                <label htmlFor='email' className='pb-3 inline-block text-base'>
-                  Email address
-                </label>
-                <input
-                  id='email'
-                  type='email'
-                  // name='email'
-                  // value={formData.email}
-                  // onChange={handleChange}
-                  placeholder='john.doe@example.com'
-                  className='w-full text-base px-4 rounded-2xl py-2.5 border-solid border transition-all duration-500 focus:border-primary focus:outline-0'
-                  {...register("email")}
-                />
-                {errors?.email ? <p className='error'>{errors?.email?.message}</p> : null}
-              </div>
-              <div className='mx-0 my-2.5 flex-1'>
-                <label
-                  htmlFor='Phnumber'
-                  className='pb-3 inline-block text-base'>
-                  Phone Number
-                </label>
-                <input
-                  id='Phnumber'
-                  type='tel'
-                  // name='phnumber'
-                  placeholder='+1234567890'
-                  // value={formData.phnumber}
-                  // onChange={handleChange}
-                  className='w-full text-base px-4 rounded-2xl py-2.5 border-solid border transition-all duration-500 focus:border-primary focus:outline-0'
-                  {...register("phnumber")}
-                />
-                {errors?.phnumber ? <p className='error'>{errors?.phnumber?.message}</p> : null}
-              </div>
-            </div>
-            <div className='sm:flex gap-3 w-full'>
-              <div className='w-full mx-0 my-2.5 flex-1'>
-                <label htmlFor='message' className='pb-3 inline-block text-base'>
-                  Select course
-                </label>
-                <Controller
-                  name="course"
-                  control={control}
-                  rules={{ required: 'This field is required' }} // Add validation rules here
-                  render={({ field }) => (
-                    <Select
-                      {...field}
-                      options={courseOptions}
-                      placeholder="Select a course"
-                      onChange={(selected) => handleChange(selected, field)}
-                    value={
-                      courseOptions.find((opt) => opt?.value === field?.value) || null
-                    }
-                      isClearable
-                    />
-                  )}
-                />
-                {errors?.course && <p className='error'>{errors?.course?.message}</p>}
-              </div>
-              <div className='w-full mx-0 my-2.5 flex-1'>
-                <label htmlFor='message' className='pb-3 inline-block text-base'>
-                  Message
-                </label>
-                <textarea
-                  id='Message'
-                  // className=' mt-2 rounded-2xl px-5 py-3 border-solid border transition-all duration-500 focus:border-primary focus:outline-0'
-                  className='w-full text-base px-4 rounded-2xl py-2.5 border-solid border transition-all duration-500 focus:border-primary focus:outline-0'
-                  placeholder='Anything else you wanna communicate'
-                  {...register("Message")}
-                />
-              </div>
-            </div>
-            <div className='mx-0 my-2.5 w-full'>
-              <button
-                type='submit'
-                disabled={loader}
-                className={`border leading-none px-6 text-lg font-medium py-4 rounded-full 
-                    ${loader
-                    ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                    : 'bg-primary border-primary text-white hover:bg-transparent hover:text-primary cursor-pointer'
-                  }`}>
-                Submit
-              </button>
-            </div>
-          </form>
-          {showThanks && (
-            <div className='text-white bg-primary rounded-full px-4 text-lg mb-4.5 mt-1 absolute flex items-center gap-2'>
-              Thank you for contacting us! We will get back to you soon.
-              <div className='w-3 h-3 rounded-full animate-spin border-2 border-solid border-white border-t-transparent'></div>
-            </div>
-          )}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Contact Form */}
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="bg-white shadow-md rounded-xl p-6 space-y-4"
+          noValidate
+        >
+          {/* Name */}
+          <div>
+            <label className="block font-medium mb-1">Name</label>
+            <input
+              type="text"
+              className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              {...register("name", {
+                required: "Name is required",
+                minLength: {
+                  value: 3,
+                  message: "Minimum 3 characters",
+                },
+              })}
+            />
+            {errors.name && (
+              <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
+            )}
+          </div>
+
+          {/* Email */}
+          <div>
+            <label className="block font-medium mb-1">Email</label>
+            <input
+              type="email"
+              className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              {...register("email", {
+                required: "Email is required",
+                pattern: {
+                  value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                  message: "Invalid email address",
+                },
+              })}
+            />
+            {errors.email && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.email.message}
+              </p>
+            )}
+          </div>
+
+          {/* Phone */}
+          <div>
+            <label className="block font-medium mb-1">Phone</label>
+            <input
+              type="tel"
+              className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              {...register("phone", {
+                required: "Phone number is required",
+                pattern: {
+                  value: /^[6-9]\d{9}$/,
+                  message: "Enter valid 10-digit Indian number",
+                },
+              })}
+            />
+            {errors.phone && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.phone.message}
+              </p>
+            )}
+          </div>
+
+          {/* Message */}
+          <div>
+            <label className="block font-medium mb-1">Message</label>
+            <textarea
+              rows={4}
+              className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              {...register("message", {
+                required: "Message is required",
+                minLength: {
+                  value: 10,
+                  message: "Message must be at least 10 characters",
+                },
+              })}
+            />
+            {errors.message && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.message.message}
+              </p>
+            )}
+          </div>
+
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition disabled:opacity-50"
+          >
+            {isSubmitting ? "Sending..." : "Send Message"}
+          </button>
+        </form>
+
+        {/* Map */}
+        <div className="w-full h-[600px] rounded-xl overflow-hidden shadow-md">
+          <iframe
+            title="SSTCI Location"
+            src="https://www.google.com/maps?q=SSTCI%20SST%20COMPUTER%20WELL%20KNOWLEDGE%20INSTITUTE&z=15&output=embed"
+            className="w-full h-full border-0"
+            loading="lazy"
+          />
         </div>
       </div>
     </section>
-  )
+  );
 }
-
-export default ContactForm
