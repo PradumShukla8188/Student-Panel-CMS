@@ -11,54 +11,54 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
       {/* Top Bar */}
-     <div className="w-full bg-gradient-to-r from-amber-600 via-amber-500 to-amber-700 text-white">
-  <div className="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center text-xs sm:text-sm">
-    
-    <div className="flex flex-col sm:flex-row sm:items-center sm:gap-6 gap-1">
-      <div className="flex items-center gap-2">
-        <Mail className="h-4 w-4" />
-        <span className="whitespace-nowrap">
-          EMAIL: SSTCOMPUTER115@GMAIL.COM
-        </span>
+      <div className="w-full bg-gradient-to-r from-amber-600 via-amber-500 to-amber-700 text-white">
+        <div className="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center text-xs sm:text-sm">
+
+          <div className="flex flex-col sm:flex-row sm:items-center sm:gap-6 gap-1">
+            <div className="flex items-center gap-2">
+              <Mail className="h-4 w-4" />
+              <span className="whitespace-nowrap">
+                EMAIL: SSTCOMPUTER115@GMAIL.COM
+              </span>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <Phone className="h-4 w-4" />
+              <span className="whitespace-nowrap">
+                CALL: 9519222486, 7376486686
+              </span>
+            </div>
+          </div>
+
+          <div className="hidden sm:flex items-center gap-4">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-white hover:bg-amber-700"
+            >
+              <UserCog className="h-4 w-4 mr-2" />
+              CENTER ADMIN
+            </Button>
+
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-white hover:bg-amber-700"
+            >
+              ADMIN LOGIN
+            </Button>
+          </div>
+
+        </div>
       </div>
 
-      <div className="flex items-center gap-2">
-        <Phone className="h-4 w-4" />
-        <span className="whitespace-nowrap">
-          CALL: 9519222486, 7376486686
-        </span>
-      </div>
-    </div>
-
-    <div className="hidden sm:flex items-center gap-4">
-      <Button
-        variant="ghost"
-        size="sm"
-        className="text-white hover:bg-amber-700"
-      >
-        <UserCog className="h-4 w-4 mr-2" />
-        CENTER ADMIN
-      </Button>
-
-      <Button
-        variant="ghost"
-        size="sm"
-        className="text-white hover:bg-amber-700"
-      >
-        ADMIN LOGIN
-      </Button>
-    </div>
-
-  </div>
-</div>
-      
 
       {/* Navbar */}
       <nav className="bg-white border-b">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between py-4">
             {/* <Link href={"/"} className="flex items-center"> */}
-              <Logo />
+            <Logo />
             {/* </Link> */}
 
             {/* Desktop Menu */}
@@ -88,10 +88,11 @@ export default function Header() {
                 </div>
               </li>
               <li><Link href="/gallery" className="hover:text-amber-600 transition-colors">GALLERY</Link></li>
-              <li  className="relative group"><button className="hover:text-amber-600 transition-colors">STUDENT</button>
-               <div className="absolute left-0 mt-2 bg-white shadow-md rounded-lg w-48 opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all duration-200">
+              <li className="relative group"><button className="hover:text-amber-600 transition-colors">STUDENT</button>
+                <div className="absolute left-0 mt-2 bg-white shadow-md rounded-lg w-48 opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all duration-200">
                   <ul className="py-2 text-sm">
                     <li><Link href="/admission/online-admission" className="block px-4 py-2 hover:bg-amber-50">Online Admission</Link></li>
+                    <li><Link href="/online-exam" className="hover:text-amber-600">ONLINE EXAM</Link></li>
                     <li><Link href="/download/student-result" className="block px-4 py-2 hover:bg-amber-50">Student Enquiry</Link></li>
                     <li><Link href="/download/forms" className="block px-4 py-2 hover:bg-amber-50">Registration Process</Link></li>
                     <li><Link href="/student/student-verify" className="block px-4 py-2 hover:bg-amber-50">Student Verify</Link></li>
@@ -159,6 +160,7 @@ export default function Header() {
 
               <li><Link href="/gallery" onClick={() => setMobileOpen(false)} className="hover:text-amber-600">GALLERY</Link></li>
               <li><Link href="/student" onClick={() => setMobileOpen(false)} className="hover:text-amber-600">STUDENT</Link></li>
+              <li><Link href="/online-exam" onClick={() => setMobileOpen(false)} className="hover:text-amber-600">ONLINE EXAM</Link></li>
               <li><Link href="/franchise" onClick={() => setMobileOpen(false)} className="hover:text-amber-600">FRANCHISE</Link></li>
               <li><Link href="/staff-login" onClick={() => setMobileOpen(false)} className="hover:text-amber-600">STAFF LOGIN</Link></li>
               <li><Link href="/contact" onClick={() => setMobileOpen(false)} className="hover:text-amber-600">CONTACT</Link></li>
