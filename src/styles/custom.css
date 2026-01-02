@@ -68,3 +68,7 @@ table {
 .formfield {
    display: flex;
 }
+
+.required {
+    color: red;
+}
