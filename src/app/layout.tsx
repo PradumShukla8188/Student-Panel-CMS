@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import "../styles/custom.css"
+import "../styles/custom.css";
+import "../styles/exam-portal.css";
 // import Header from "@/app/components/Layout/Header";
 import Footer from "@/app/components/Layout/Footer";
 import ScrollToTop from "@/app/components/ScrollToTop";
